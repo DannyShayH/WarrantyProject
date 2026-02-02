@@ -1,0 +1,45 @@
+@startuml
+!pragma layout smetana
+'https://plantuml.com/class-diagram
+
+title Domain Model - Warranty Management Diagram
+' --------------------------------------------------------------------
+' LAYERS
+' --------------------------------------------------------------------
+
+class User {
+    - id
+    - email
+    - password
+    - createdAt
+    + addProduct(product)
+}
+
+class Product {
+    - id
+    - name
+    + isOwnedBy(user)
+    + addWarranty(warranty)
+    + addReceipt(receipt)
+}
+
+class Warranty {
+    - id
+    - warrantyPeriodMonths
+    - expirationDate
+    + isExpired()
+}
+
+class Receipt {
+    - id
+    - purchaseDate
+    - imageUrl
+    + uploadImage(url)
+}
+
+User --* Product : Has a
+Product --* Warranty : Has a
+Product --* Receipt : Has a
+
+
+@enduml
