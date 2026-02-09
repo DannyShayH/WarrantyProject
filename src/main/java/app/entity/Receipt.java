@@ -16,11 +16,16 @@ public class Receipt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer id;
+    private Long id;
 
-    @Column(name="purcahse_date")
-    private LocalDate purchaseDate;
+    @OneToOne(optional = false)
+    @JoinColumn(name ="registration_id", unique = true)
+    private ProductRegistration registration;
+
+    @Column(name="purchase_at", nullable = false)
+    private LocalDate purchaseAt;
 
     @Column(name="image_url")
     private String imageUrl;
+
 }

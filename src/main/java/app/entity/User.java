@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -16,15 +18,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
-    @Column(name ="e-mail", nullable = false)
+    @Column(name = "e-mail", nullable = false, unique = true)
     private String email;
 
-    @Column(name ="password", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
 
-    @Column(name ="created_at", nullable = false)
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "owner")
+    private List<ProductRegistration> registrationlist = new ArrayList<>();
 }

@@ -3,6 +3,7 @@ package app.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -16,12 +17,23 @@ public class Warranty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer id;
+    private Long id;
 
-    @Column(name="warranty_period_months")
-    private Integer warrantyPeriodMonths;
+    @OneToOne(optional = false)
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
-    @Column(name="expiration_date")
-    private LocalDateTime expirationDate;
+    @Column(name ="warranty_months", nullable = false, updatable = false)
+    private int warrantyMonths;
+
+    @Column(name="start_date", nullable = false, updatable = false)
+    private LocalDate startDate;
+
+    @Column(name="end_date", nullable = false, updatable = false)
+    private LocalDate endDate;
+
+    public boolean isExpired(){
+        return LocalDate.now().isAfter(endDate);
+    }
 
 }
