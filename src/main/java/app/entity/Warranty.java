@@ -1,5 +1,6 @@
 package app.entity;
 
+import app.persistence.IEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -7,13 +8,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+@ToString(exclude ="product")
 @Entity
 @Table(name="warranties")
-public class Warranty {
+public class Warranty implements IEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -32,8 +34,6 @@ public class Warranty {
     @Column(name="end_date", nullable = false, updatable = false)
     private LocalDate endDate;
 
-    public boolean isExpired(){
-        return LocalDate.now().isAfter(endDate);
-    }
+    public void calculateEndDate(){this.endDate = startDate.plusMonths(warrantyMonths);}
 
 }

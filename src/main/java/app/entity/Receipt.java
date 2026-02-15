@@ -1,18 +1,20 @@
 package app.entity;
 
+import app.persistence.IEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+@ToString(exclude = "registration")
 @Entity
 @Table(name="receipts")
-public class Receipt {
+public class Receipt implements IEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -23,9 +25,12 @@ public class Receipt {
     private ProductRegistration registration;
 
     @Column(name="purchase_at", nullable = false)
-    private LocalDate purchaseAt;
+    private LocalDate purchasedAt;
 
     @Column(name="image_url")
     private String imageUrl;
 
+    public Receipt(LocalDate purchasedAt) {
+        this.purchasedAt = purchasedAt;
+    }
 }

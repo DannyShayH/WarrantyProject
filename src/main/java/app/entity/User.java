@@ -1,5 +1,6 @@
 package app.entity;
 
+import app.persistence.IEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,13 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+@ToString(exclude ="registrationlist")
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements IEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -25,11 +27,16 @@ public class User {
 
     @Column(name = "password", nullable = false)
     private String password;
-
-
+    
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<ProductRegistration> registrationlist = new ArrayList<>();
+
+    public User(String email, String password, LocalDateTime createdAt) {
+        this.email = email;
+        this.password = password;
+        this.createdAt = createdAt;
+    }
 }

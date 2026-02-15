@@ -1,16 +1,18 @@
 package app.entity;
 
+import app.persistence.IEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+@ToString(exclude ="warranty")
 @Entity
 @Table(name="products")
-public class Product {
+public class Product implements IEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -22,4 +24,7 @@ public class Product {
     @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
     private Warranty warranty;
 
+    public Product(String productName) {
+        this.productName = productName;
+    }
 }

@@ -1,44 +1,70 @@
 package app.daos;
 
 import app.entity.Receipt;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.TypedQuery;
+import app.persistence.IDAO;
+import jakarta.persistence.*;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class ReceiptDAO {
+public class ReceiptDAO implements IDAO<Receipt> {
 
-    private static EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
     public ReceiptDAO(EntityManagerFactory emf){
         this.emf = emf;
     }
 
-    @PrePersist
-    public Receipt createReceipt(Receipt r) {
+    @Override
+    public Receipt create(Receipt r) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.persist(r);
             em.getTransaction().commit();
-        }
-        return r;
-    }
-
-    public Long getReceiptCount() {
-        try (EntityManager em = emf.createEntityManager()) {
-            TypedQuery<Long> q1 = em.createQuery("SELECT COUNT(r) FROM Receipt r", Long.class);
-            return q1.getSingleResult();
+            return r;
         }
     }
 
+    @Override
+    public Receipt getByID(Long id) {
+        try(EntityManager em = emf.createEntityManager()) {
+            Receipt receipt = em.find(Receipt.class, id);
+            if (receipt == null)
+                throw new EntityNotFoundException("No entity found with id: " + id);
+            return receipt;
+        }
+    }
 
-    public List<Receipt> allReceipts() {
-        try (EntityManager em = emf.createEntityManager()) {
-            TypedQuery<Receipt> query = em.createQuery("SELECT r FROM Receipt r", Receipt.class);
-            query.setMaxResults(30);
-            return query.getResultList();
+    @Override
+    public Receipt update(Receipt r) {
+        try(EntityManager em = emf.createEntityManager()){
+            Receipt foundReceipt = em.find(Receipt.class, r.getId());
+            if(foundReceipt == null)
+                throw new EntityNotFoundException("No entity found with id: "+ r.getId());
+            em.getTransaction().begin();
+            Receipt receipt = em.merge(r);
+            em.getTransaction().commit();
+            return receipt;
+        }
+    }
+
+    @Override
+    public Long delete(Receipt r) {
+        try(EntityManager em = emf.createEntityManager()){
+            Receipt receipt = em.find(Receipt.class, r.getId());
+            if(receipt == null)
+                throw new EntityNotFoundException("No entity found with id: "+ r.getId());
+            em.getTransaction().begin();
+            em.remove(receipt);
+            em.getTransaction().commit();
+            return receipt.getId();
+        }
+    }
+
+    @Override
+    public Set<Receipt> get() {
+        try(EntityManager em = emf.createEntityManager()){
+            return new HashSet(em.createQuery("SELECT r FROM Receipt r").getResultList());
         }
     }
 }

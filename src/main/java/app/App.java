@@ -4,29 +4,20 @@ import app.config.HibernateConfig;
 //import app.controllers.AdminController;
 //import app.controllers.UserController;
 import app.config.ThymeleafConfig;
-import app.daos.UserDAO;
-import app.entity.User;
+import app.utils.Populator;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
-import java.time.LocalDateTime;
 
 public class App
 {
-    private static EntityManagerFactory emf;
 
     public static void initiate()
     {
-        emf = HibernateConfig.getEntityManagerFactory();
-
-        EntityManager em = emf.createEntityManager();
-        UserDAO UserDAO = new UserDAO(emf);
-
-            User u = User.builder().email("Shay@gmail.com").password("1234").createdAt(LocalDateTime.now())
-                    .build();
-            UserDAO.createUser(u);
+        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+        Populator populator = new Populator(emf);
+        populator.populate().forEach((k, v) -> System.out.println(k + ": " + v));
 
         Javalin app = Javalin.create(config ->
         {
@@ -37,5 +28,5 @@ public class App
 
         //UserController.addRoutes(app);
         //AdminController.addRoutes(app);
-}
+    }
 }

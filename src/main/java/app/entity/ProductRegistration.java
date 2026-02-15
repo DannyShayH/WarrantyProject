@@ -1,19 +1,20 @@
 package app.entity;
 
+import app.persistence.IEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+@ToString(exclude ={"owner", "receipt"})
 @Entity
 @Table(name = "registered_products")
-public class ProductRegistration {
-
+public class ProductRegistration implements IEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,8 +31,17 @@ public class ProductRegistration {
     private Receipt receipt;
 
     @Column(name = "purchased_at", nullable = false, updatable = false)
-    private LocalDate purchaseAt;
+    private LocalDate purchasedAt;
 
     @Column(name = "registered_at", nullable = false, updatable = false)
     private LocalDate registeredAt = LocalDate.now();
+
+    public ProductRegistration(LocalDate purchasedAt, LocalDate registeredAt, User owner, Product product, Receipt receipt) {
+        this.purchasedAt = purchasedAt;
+        this.registeredAt = registeredAt;
+        this.owner = owner;
+        this.product = product;
+        this.receipt = receipt;
+        //this.warranty = warranty;
+    }
 }
