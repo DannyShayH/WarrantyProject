@@ -36,12 +36,4 @@ public class ProductRegistration implements IEntity {
     @Column(name = "registered_at", nullable = false, updatable = false)
     private LocalDate registeredAt = LocalDate.now();
 
-    public ProductRegistration(LocalDate purchasedAt, LocalDate registeredAt, User owner, Product product, Receipt receipt) {
-        this.purchasedAt = purchasedAt;
-        this.registeredAt = registeredAt;
-        this.owner = owner;
-        this.product = product;
-        this.receipt = receipt;
-        //this.warranty = warranty;
-    }
 }

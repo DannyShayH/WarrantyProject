@@ -23,8 +23,4 @@ public class Product implements IEntity {
 
     @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
     private Warranty warranty;
-
-    public Product(String productName) {
-        this.productName = productName;
-    }
 }

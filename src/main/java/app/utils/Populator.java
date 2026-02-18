@@ -4,6 +4,7 @@ import app.daos.*;
 import app.entity.*;
 import app.persistence.IDAO;
 import app.persistence.IEntity;
+import app.services.PasswordService;
 import jakarta.persistence.EntityManagerFactory;
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ import java.util.Map;
 public class Populator {
 
     private final EntityManagerFactory emf;
+    private final PasswordService passwordService;
     private final IDAO<Product> productDAO;
     private final IDAO<ProductRegistration> productRegistrationDAO;
     private final IDAO<Receipt> receiptDAO;
@@ -21,6 +23,7 @@ public class Populator {
 
     public Populator(EntityManagerFactory emf) {
         this.emf = emf;
+        this.passwordService = new PasswordService();
         this.productDAO = new ProductDAO(emf);
         this.productRegistrationDAO = new ProductRegistrationDAO(emf);
         this.receiptDAO = new ReceiptDAO(emf);
@@ -29,39 +32,81 @@ public class Populator {
     }
 
     public Map<String, IEntity> populate() {
+        LocalDateTime startDateTime = LocalDateTime.now();
+        LocalDate start = LocalDate.now();
 
-        User user1 = new User("Shay@gmail.com", "123", LocalDateTime.now());
-        User user2 = new User("Hond12@gmail.com", "123", LocalDateTime.now());
-        User user3 = new User("Clad22@gmail.com", "123", LocalDateTime.now());
+        User user1 = User
+                .builder()
+                .email("Shay@gmail.com")
+                .password(passwordService.hash("12345678"))
+                .createdAt(startDateTime)
+                .build();
+        User user2 = User
+                .builder()
+                .email("Honda@gmail.com")
+                .password(passwordService.hash("12345678"))
+                .createdAt(startDateTime)
+                .build();
+        User user3 = User
+                .builder()
+                .email("Clad@gmail.com")
+                .password(passwordService.hash("12345678"))
+                .createdAt(startDateTime)
+                .build();
 
         userDAO.create(user1);
         userDAO.create(user2);
         userDAO.create(user3);
 
-        LocalDate start = LocalDate.now();
 
-        Product product1 = new Product("Iphone 17");
-        Product product2 = new Product("Iphone 18");
-        Product product3 = new Product("MacBook Air");
+        Product product1 = Product
+                .builder()
+                .productName("Iphone 18")
+                .build();
+        Product product2 =  Product
+                .builder()
+                .productName("Iphone 18")
+                .build();
+        Product product3 = Product
+                .builder()
+                .productName("MacBook Air")
+                .build();
 
-        Receipt receipt1 = new Receipt(start);
-        Receipt receipt2 = new Receipt(start);
-        Receipt receipt3 = new Receipt(start);
+        Receipt receipt1 = Receipt
+                .builder()
+                .purchasedAt(start)
+                .description("AN IPHONE 17 WOW")
+                .price(1234.98)
+                .build();
+        Receipt receipt2 = Receipt
+                .builder()
+                .purchasedAt(start)
+                .description("AN IPHONE 18 WOW")
+                .price(2430.50)
+                .build();
+        Receipt receipt3 = Receipt
+                .builder()
+                .purchasedAt(start)
+                .description("A MACBOOK AIR WOW")
+                .price(3504.43)
+                .build();
 
-        Warranty warranty1 = new Warranty();
-        Warranty warranty2 = new Warranty();
-        Warranty warranty3 = new Warranty();
+        Warranty warranty1 = Warranty
+                .builder()
+                .warrantyMonths(12)
+                .startDate(LocalDate.of(2026,2,14))
+                .build();
+        Warranty warranty2 = Warranty
+                .builder().warrantyMonths(24)
+                .startDate(LocalDate.of(2026,2,20))
+                .build();
+        Warranty warranty3 = Warranty
+                .builder().warrantyMonths(36)
+                .startDate(LocalDate.of(2026,2,26))
+                .build();
 
-        warranty1.setStartDate(LocalDate.of(2026,2,14));
-        warranty1.setWarrantyMonths(12);
         warranty1.calculateEndDate();
-
-        warranty2.setStartDate(LocalDate.of(2026,2,14));
-        warranty2.setWarrantyMonths(24);
         warranty2.calculateEndDate();
-
-        warranty3.setStartDate(LocalDate.of(2026,2,14));
-        warranty3.setWarrantyMonths(36);
         warranty3.calculateEndDate();
 
         product1.setWarranty(warranty1);
@@ -76,10 +121,27 @@ public class Populator {
         productDAO.create(product2);
         productDAO.create(product3);
 
-        // add warranty to productRegistration
-        ProductRegistration pr1 = new ProductRegistration(start, start, user1, product1, receipt1);
-        ProductRegistration pr2 = new ProductRegistration(start, start, user2, product2, receipt2);
-        ProductRegistration pr3 = new ProductRegistration(start, start, user3, product3, receipt3);
+        ProductRegistration pr1 = ProductRegistration
+                .builder().registeredAt(start)
+                .purchasedAt(start)
+                .owner(user1)
+                .product(product1)
+                .receipt(receipt1)
+                .build();
+        ProductRegistration pr2 = ProductRegistration
+                .builder().registeredAt(start)
+                .purchasedAt(start)
+                .owner(user2)
+                .product(product2)
+                .receipt(receipt2)
+                .build();
+        ProductRegistration pr3 = ProductRegistration
+                .builder().registeredAt(start)
+                .purchasedAt(start)
+                .owner(user3)
+                .product(product3)
+                .receipt(receipt3)
+                .build();
 
         receipt1.setRegistration(pr1);
         receipt2.setRegistration(pr2);

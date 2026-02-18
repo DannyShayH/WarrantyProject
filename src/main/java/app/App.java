@@ -1,13 +1,11 @@
 package app;
 
 import app.config.HibernateConfig;
-//import app.controllers.AdminController;
-//import app.controllers.UserController;
-import app.config.ThymeleafConfig;
+import app.daos.RetrieveDAO;
 import app.utils.Populator;
-import io.javalin.Javalin;
-import io.javalin.rendering.template.JavalinThymeleaf;
 import jakarta.persistence.EntityManagerFactory;
+
+import java.util.Set;
 
 
 public class App
@@ -19,14 +17,23 @@ public class App
         Populator populator = new Populator(emf);
         populator.populate().forEach((k, v) -> System.out.println(k + ": " + v));
 
-        Javalin app = Javalin.create(config ->
-        {
-            config.staticFiles.add("/public");
-            config.fileRenderer(new JavalinThymeleaf(ThymeleafConfig.templateEngine()));
-            config.staticFiles.add("/templates");
-        }).start(7071);
+        RetrieveDAO retrieveDAO = new RetrieveDAO(emf);
+        System.out.println();
+        System.out.println("\n#####RETRIEVED######");
+        print("User's Products:", retrieveDAO.getAllProductsForUsers(3));
+        print("User's With Products:", retrieveDAO.getAllUsersForProduct("Iphone 18"));
+        print("User's Warranty:", retrieveDAO.getAllWarrantiesForUsers(3));
+        print("User's Receipt:", retrieveDAO.getAllReceiptForUsers(2));
+        print("User's Product based on Email:", retrieveDAO.getProductsWithUserEmailDomain("Shay@gmail.com"));
+        print("Products with specific price", retrieveDAO.getReceiptWithSpecificPrice(3504.43));
+        print("Receipts with Price Range:", retrieveDAO.getReceiptWithPriceRange(6000.34));
+        System.out.println("\n####################");
 
-        //UserController.addRoutes(app);
-        //AdminController.addRoutes(app);
+
+    }
+    private static <T> void print(String title, Set<T> data){
+        System.out.println();
+        System.out.println(title);
+        data.forEach(System.out::println);
     }
 }

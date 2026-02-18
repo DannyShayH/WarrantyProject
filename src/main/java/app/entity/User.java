@@ -1,9 +1,11 @@
 package app.entity;
 
 import app.persistence.IEntity;
+import app.services.PasswordService;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +36,8 @@ public class User implements IEntity {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<ProductRegistration> registrationlist = new ArrayList<>();
 
-    public User(String email, String password, LocalDateTime createdAt) {
-        this.email = email;
-        this.password = password;
-        this.createdAt = createdAt;
+
+    public boolean validatePassword(String password, PasswordService passwordService){
+        return passwordService.verify(password, this.password);
     }
 }

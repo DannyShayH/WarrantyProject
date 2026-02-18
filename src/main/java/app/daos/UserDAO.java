@@ -26,6 +26,16 @@ public class UserDAO implements IDAO<User> {
         }
     }
 
+    public User findByEmail(String email) {
+        try (EntityManager em = emf.createEntityManager()) {
+            User user = em.find(User.class, email);
+            if (user == null) {
+                throw new EntityNotFoundException("No entity found with this email: " + email);
+            }
+                return user;
+        }
+    }
+
     @Override
     public User getByID(Long id) {
         try(EntityManager em = emf.createEntityManager()) {

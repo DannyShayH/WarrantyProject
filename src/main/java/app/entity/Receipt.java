@@ -27,10 +27,9 @@ public class Receipt implements IEntity {
     @Column(name="purchase_at", nullable = false)
     private LocalDate purchasedAt;
 
-    @Column(name="image_url")
-    private String imageUrl;
+    @Column(name="descripton")
+    private String description;
 
-    public Receipt(LocalDate purchasedAt) {
-        this.purchasedAt = purchasedAt;
-    }
+    @Column(name="price")
+    private double price;
 }

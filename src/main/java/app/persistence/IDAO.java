@@ -13,6 +13,4 @@ public interface IDAO<T> {
     T update(T t);
 
     Long delete(T t);
-
-
 }
