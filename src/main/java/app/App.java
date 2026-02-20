@@ -2,17 +2,28 @@ package app;
 
 import app.config.HibernateConfig;
 import app.daos.RetrieveDAO;
+import app.dto.LawDataDTO;
+import app.services.ApiFetcher;
+import app.services.XMLExtractor;
 import app.utils.Populator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManagerFactory;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Set;
 
 
 public class App
 {
+    public static void initiate() throws IOException, URISyntaxException, InterruptedException, ParserConfigurationException, SAXException {
+        String url = "https://www.retsinformation.dk/eli/lta/2021/1853/xml";
+        String xml = ApiFetcher.getXml(url);
+        LawDataDTO data;
+        long start = System.currentTimeMillis();
 
-    public static void initiate()
-    {
         EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
         Populator populator = new Populator(emf);
         populator.populate().forEach((k, v) -> System.out.println(k + ": " + v));
@@ -29,6 +40,14 @@ public class App
         print("Receipts with Price Range:", retrieveDAO.getReceiptWithPriceRange(6000.34));
         System.out.println("\n####################");
 
+        data = XMLExtractor.extract(xml);
+        System.out.println("\n########LAW CONTENT########");
+        System.out.println("Title:\n" + data.getTitle());
+        System.out.println("Content:\n" + data.getContent());
+
+        long end = System.currentTimeMillis();
+
+        System.out.println("All data fetched in " + (end - start) + " ms");
 
     }
     private static <T> void print(String title, Set<T> data){
