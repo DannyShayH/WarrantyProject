@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.temporal.Temporal;
 
 @Getter
 @Setter
@@ -34,6 +34,23 @@ public class Warranty implements IEntity {
     @Column(name="end_date", nullable = false, updatable = false)
     private LocalDate endDate;
 
-    public void calculateEndDate(){this.endDate = startDate.plusMonths(warrantyMonths);}
+    @Column(name="notified_90_days")
+    private boolean notified90Days;
+
+    @Column(name="notified_60_days")
+    private boolean notified60Days;
+
+    @Column(name="notified_30_days")
+    private boolean notified30Days;
+
+    @Column(name="notified_expired")
+    private boolean notifiedExpired;
+
+    public LocalDate calculateEndDate(){
+        if(endDate == null){
+            endDate = startDate.plusMonths(warrantyMonths);
+        }
+        return endDate;
+    }
 
 }

@@ -1,11 +1,10 @@
 package app.entity;
 
 import app.persistence.IEntity;
-import app.services.PasswordService;
+import app.services.validationServices.PasswordService;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,7 @@ public class User implements IEntity {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "e-mail", nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "password", nullable = false)

@@ -1,4 +1,4 @@
-package app.services;
+package app.services.xmlServices;
 
 import app.dto.LawDataDTO;
 import org.w3c.dom.Document;
@@ -12,12 +12,24 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.StringReader;
 
-public class XMLExtractor  {
+public class XMLExtractor {
 
-    public static LawDataDTO extract(String xml) throws IOException, SAXException, ParserConfigurationException {
+    public LawDataDTO extract(String xml){
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(new InputSource(new StringReader(xml)));
+        DocumentBuilder builder = null;
+        try {
+            builder = factory.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            throw new RuntimeException(e);
+        }
+        Document doc = null;
+        try {
+            doc = builder.parse(new InputSource(new StringReader(xml)));
+        } catch (SAXException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         String title = "";
         NodeList titleNodes = doc.getElementsByTagName("DocumentTitle");

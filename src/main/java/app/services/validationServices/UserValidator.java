@@ -1,4 +1,4 @@
-package app.services;
+package app.services.validationServices;
 
 import app.daos.UserDAO;
 import app.entity.User;

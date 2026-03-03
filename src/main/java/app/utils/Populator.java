@@ -4,12 +4,14 @@ import app.daos.*;
 import app.entity.*;
 import app.persistence.IDAO;
 import app.persistence.IEntity;
-import app.services.PasswordService;
+import app.services.persistenceServices.EntityManagerFactoryService;
+import app.services.validationServices.PasswordService;
 import jakarta.persistence.EntityManagerFactory;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.Set;
 
 public class Populator {
 
@@ -62,14 +64,17 @@ public class Populator {
         Product product1 = Product
                 .builder()
                 .productName("Iphone 18")
+                .owner(user1)
                 .build();
         Product product2 =  Product
                 .builder()
                 .productName("Iphone 18")
+                .owner(user2)
                 .build();
         Product product3 = Product
                 .builder()
                 .productName("MacBook Air")
+                .owner(user1)
                 .build();
 
         Receipt receipt1 = Receipt
@@ -94,15 +99,15 @@ public class Populator {
         Warranty warranty1 = Warranty
                 .builder()
                 .warrantyMonths(12)
-                .startDate(LocalDate.of(2026,2,14))
+                .startDate(LocalDate.now())
                 .build();
         Warranty warranty2 = Warranty
                 .builder().warrantyMonths(24)
-                .startDate(LocalDate.of(2026,2,20))
+                .startDate(LocalDate.now())
                 .build();
         Warranty warranty3 = Warranty
                 .builder().warrantyMonths(36)
-                .startDate(LocalDate.of(2026,2,26))
+                .startDate(LocalDate.now())
                 .build();
 
         warranty1.calculateEndDate();
@@ -113,9 +118,14 @@ public class Populator {
         product2.setWarranty(warranty2);
         product3.setWarranty(warranty3);
 
+        product1.setOwner(user1);
+        product2.setOwner(user2);
+        product3.setOwner(user3);
+
         warranty1.setProduct(product1);
         warranty2.setProduct(product2);
         warranty3.setProduct(product3);
+
 
         productDAO.create(product1);
         productDAO.create(product2);
@@ -176,5 +186,28 @@ public class Populator {
                 Map.entry("pr2", pr2),
                 Map.entry("pr3", pr3)
         );
+    }
+
+    public void populateAndCreateEntities(){
+        Populator populator = new Populator(EntityManagerFactoryService.getEntityManagerFactory());
+        populator.populate().forEach((k, v) -> System.out.println(k + ": " + v));
+
+        RetrieveDAO retrieveDAO = new RetrieveDAO(EntityManagerFactoryService.getEntityManagerFactory());
+        System.out.println();
+        System.out.println("\n#####RETRIEVED######");
+        print("User's Products:", retrieveDAO.getAllProductsForUsers(3));
+        print("User's With Products:", retrieveDAO.getAllUsersForProduct("Iphone 18"));
+        print("User's Warranty:", retrieveDAO.getAllWarrantiesForUsers(3));
+        print("User's Receipt:", retrieveDAO.getAllReceiptForUsers(2));
+        print("User's Product based on Email:", retrieveDAO.getProductsWithUserEmailDomain("Shay@gmail.com"));
+        print("Products with specific price", retrieveDAO.getReceiptWithSpecificPrice(3504.43));
+        print("Receipts with Price Range:", retrieveDAO.getReceiptWithPriceRange(6000.34));
+        System.out.println("\n####################");
+    }
+
+    private <T> void print(String title, Set<T> data){
+        System.out.println();
+        System.out.println(title);
+        data.forEach(System.out::println);
     }
 }

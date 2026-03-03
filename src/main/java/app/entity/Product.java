@@ -21,6 +21,10 @@ public class Product implements IEntity {
     @Column(name="product_name")
     private String productName;
 
+    @ManyToOne
+    @JoinColumn(name="owner", nullable = false)
+    private User owner;
+
     @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
     private Warranty warranty;
 }
