@@ -1,9 +1,7 @@
 package app;
 
 import app.config.HibernateConfig;
-import app.controllers.ProductController;
-import app.controllers.UserController;
-import app.controllers.WarrantyController;
+import app.controllers.*;
 import app.routes.Routes;
 import app.services.notificationServices.SendGridService;
 import app.services.testClassService.TestClassFactory;
@@ -17,10 +15,18 @@ public class App {
         final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
         XmlService xmlService = new XmlService();
 //        Populator populater = new Populator();
+
         ProductController pController = new ProductController(emf);
         WarrantyController wController = new WarrantyController(emf);
         UserController uController = new UserController(emf);
-        Routes routes = new Routes(pController, wController, uController);
+        ReceiptController rController = new ReceiptController(emf);
+        ProductRegistrationController prController = new ProductRegistrationController(emf);
+
+        Routes routes = new Routes(pController,
+                wController,
+                uController,
+                rController,
+                prController);
 
         long start = System.currentTimeMillis();
 
