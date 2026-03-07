@@ -19,6 +19,12 @@ public class ProductDAO implements IDAO<Product> {
     public Product create(Product p) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
+            if(p.getOwner() != null){
+                p.setOwner(em.merge(p.getOwner()));
+            }
+            if(p.getWarranty() != null){
+                p.setWarranty(em.merge(p.getWarranty()));
+            }
             em.persist(p);
             em.getTransaction().commit();
             return p;
@@ -55,6 +61,16 @@ public class ProductDAO implements IDAO<Product> {
             if(product == null)
                 throw new EntityNotFoundException("No entity found with id: "+ p.getId());
             em.getTransaction().begin();
+
+            em.createQuery("DELETE FROM Receipt r WHERE r.registration IN " +
+                    "(SELECT pr FROM ProductRegistration pr WHERE pr.product.id = :id)")
+                            .setParameter("id", p.getId())
+                                    .executeUpdate();
+
+            em.createQuery("DELETE FROM ProductRegistration pr WHERE pr.product.id = :id")
+                    .setParameter("id", p.getId())
+                    .executeUpdate();
+
             em.remove(product);
             em.getTransaction().commit();
             return product.getId();
