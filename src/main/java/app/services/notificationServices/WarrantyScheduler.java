@@ -55,6 +55,10 @@ public class WarrantyScheduler {
         }
     }
     private void sendAndMark(Warranty warranty, long days) {
+        if(warranty.getProduct() == null || warranty.getProduct().getOwner() == null){
+            System.out.println("Product or owner is null on warranty with Id - " + warranty.getId());
+            return;
+        }
         emailService.sendWarrantyReminder(
                 warranty.getProduct().getOwner().getEmail(),
                 warranty.getProduct().getProductName(),

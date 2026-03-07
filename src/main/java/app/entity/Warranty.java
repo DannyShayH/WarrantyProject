@@ -21,8 +21,7 @@ public class Warranty implements IEntity {
     @Column(name="id")
     private Long id;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "product_id", nullable = false)
+    @OneToOne(mappedBy = "warranty")
     private Product product;
 
     @Column(name ="warranty_months", nullable = false, updatable = false)

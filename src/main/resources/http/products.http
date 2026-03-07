@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:7070/product
+
+### Get All Products
+
+GET {{baseUrl}}/all
+
+### Get Product with ID
+
+GET {{baseUrl}}/1
+
+### Create new Product
+
+POST {{baseUrl}}/
+Content-Type: application/json
+
+{
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 1
+}
+
+### Update Product on ID
+
+PUT {{baseUrl}}/1
+Content-Type: application/json
+
+{
+    "productName" : "Updated Test Iphone",
+    "userId" : "1",
+    "warrantyId" : "1"
+}
+
+### Delete Product on ID
+
+DELETE {{baseUrl}}/1
