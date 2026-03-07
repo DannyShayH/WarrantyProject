@@ -1,5 +1,37 @@
-### GET request to example server
-GET https://examples.http-client.intellij.net/get
-    ?generated-in=IntelliJ IDEA
+@baseUrl = http://localhost:7070/productRegistration
 
-###
+### Get All Products
+
+GET {{baseUrl}}/all
+
+### Get Product with ID
+
+GET {{baseUrl}}/1
+
+### Create new Product
+
+POST {{baseUrl}}/
+Content-Type: application/json
+
+{
+    "userId" : 1,
+    "productId" : 2,
+    "purchasedAt" : "2026-04-05",
+    "registeredAt" : "2026-04-05"
+}
+
+### Update Product on ID
+
+PUT {{baseUrl}}/4
+Content-Type: application/json
+
+{
+    "userId" : 2,
+    "productId" : 2,
+    "purchasedAt" : "2026-06-06",
+    "registeredAt" : "2026-06-06"
+}
+
+### Delete Product on ID
+
+DELETE {{baseUrl}}/1
