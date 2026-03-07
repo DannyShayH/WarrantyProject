@@ -25,7 +25,9 @@ public class ProductController {
     }
 
     public void update(Context ctx){
+        long id = Long.parseLong(ctx.pathParam("id"));
         ProductDTO productDTO = ctx.bodyAsClass(ProductDTO.class);
+        productDTO.setId(id);
         ctx.json(productService.update(productDTO));
     }
 
