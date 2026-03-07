@@ -10,9 +10,9 @@ public class ReceiptDTOConverter {
     private final EntityManagerFactory emf;
     private final ProductRegistrationDAO productRegistrationDAO;
 
-    public ReceiptDTOConverter(EntityManagerFactory emf, ProductRegistrationDAO productRegistrationDAO){
+    public ReceiptDTOConverter(EntityManagerFactory emf){
         this.emf = emf;
-        this.productRegistrationDAO = productRegistrationDAO;
+        this.productRegistrationDAO = new ProductRegistrationDAO(emf);
     }
 
     public Receipt fromDTO(ReceiptDTO receiptDTO){
