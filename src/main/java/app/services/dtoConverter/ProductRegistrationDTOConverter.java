@@ -1,5 +1,6 @@
 package app.services.dtoConverter;
 
+import app.daos.ProductDAO;
 import app.daos.ReceiptDAO;
 import app.daos.UserDAO;
 import app.dto.ProductRegistrationDTO;
@@ -10,9 +11,11 @@ public class ProductRegistrationDTOConverter {
     private final EntityManagerFactory emf;
     private final UserDAO userDAO;
     private final ReceiptDAO receiptDAO;
+    private final ProductDAO productDAO;
 
     public ProductRegistrationDTOConverter(EntityManagerFactory emf){
         this.emf = emf;
+        this.productDAO = new ProductDAO(emf);
         this.userDAO = new UserDAO(emf);
         this.receiptDAO = new ReceiptDAO(emf);
     }
@@ -21,6 +24,12 @@ public class ProductRegistrationDTOConverter {
         ProductRegistration productRegistration = new ProductRegistration();
         if(productRegistrationDTO.getId() != 0){
             productRegistration.setId(productRegistrationDTO.getId());
+        }
+        if(productRegistrationDTO.getProductId() != 0){
+            Product product = productDAO.getByID(productRegistrationDTO.getProductId());
+            if(product != null){
+                productRegistration.setProduct(product);
+            }
         }
         if(productRegistrationDTO.getUserId() != 0){
             User user = userDAO.getByID(productRegistrationDTO.getUserId());
@@ -42,6 +51,7 @@ public class ProductRegistrationDTOConverter {
 
     public ProductRegistrationDTO toDTO(ProductRegistration productRegistration){
         ProductRegistrationDTO productRegistrationDTO = new ProductRegistrationDTO();
+        productRegistrationDTO.setId(productRegistration.getId());
         if(productRegistration.getProduct() != null){
         productRegistrationDTO.setProductId(productRegistration.getProduct().getId());
         }
