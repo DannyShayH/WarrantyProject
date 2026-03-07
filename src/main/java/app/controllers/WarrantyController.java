@@ -26,7 +26,9 @@ public class WarrantyController {
     }
 
     public void update(Context ctx){
+        long id = Long.parseLong(ctx.pathParam("id"));
         WarrantyDTO warrantyDTO = ctx.bodyAsClass(WarrantyDTO.class);
+        warrantyDTO.setId(id);
         ctx.json(warrantyService.update(warrantyDTO));
     }
 

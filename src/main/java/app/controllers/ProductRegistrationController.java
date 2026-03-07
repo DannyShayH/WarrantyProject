@@ -26,7 +26,9 @@ public class ProductRegistrationController {
     }
 
     public void update(Context ctx){
+        long id = Long.parseLong(ctx.pathParam("id"));
         ProductRegistrationDTO productRegistrationDTO = ctx.bodyAsClass(ProductRegistrationDTO.class);
+        productRegistrationDTO.setId(id);
         ctx.json(productRegistrationService.update(productRegistrationDTO));
     }
 

@@ -26,7 +26,9 @@ public class ReceiptController {
     }
 
     public void update(Context ctx){
+        long id = Long.parseLong(ctx.pathParam("id"));
         ReceiptDTO receiptDTO = ctx.bodyAsClass(ReceiptDTO.class);
+        receiptDTO.setId(id);
         ctx.json(receiptService.update(receiptDTO));
     }
 

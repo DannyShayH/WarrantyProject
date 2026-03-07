@@ -26,7 +26,9 @@ public class UserController {
     }
 
     public void update(Context ctx){
+        long id = Long.parseLong(ctx.pathParam("id"));
         UserDTO userDTO = ctx.bodyAsClass(UserDTO.class);
+        userDTO.setId(id);
         ctx.json(userService.update(userDTO));
     }
 
