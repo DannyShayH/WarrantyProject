@@ -27,7 +27,8 @@ public class ProductRegistration implements IEntity {
     @JoinColumn(name ="product_id")
     private Product product;
 
-    @OneToOne(mappedBy = "registration", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "receipt_id")
     private Receipt receipt;
 
     @Column(name = "purchased_at", nullable = false, updatable = false)
