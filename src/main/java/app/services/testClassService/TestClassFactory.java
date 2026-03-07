@@ -1,5 +1,6 @@
 package app.services.testClassService;
 
+import app.config.HibernateConfig;
 import app.daos.ProductDAO;
 import app.daos.UserDAO;
 import app.daos.WarrantyDAO;
@@ -8,16 +9,16 @@ import app.entity.User;
 import app.entity.Warranty;
 import app.services.notificationServices.EmailService;
 import app.services.notificationServices.WarrantyScheduler;
-import app.services.persistenceServices.EntityManagerFactoryService;
+import jakarta.persistence.EntityManagerFactory;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class TestClassFactory {
-
-   static final WarrantyDAO warrantyDAO = new WarrantyDAO(EntityManagerFactoryService.getEntityManagerFactory());
-    static final ProductDAO productDAO = new ProductDAO(EntityManagerFactoryService.getEntityManagerFactory());
-    static final UserDAO userDAO = new UserDAO(EntityManagerFactoryService.getEntityManagerFactory());
+    static final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+   static final WarrantyDAO warrantyDAO = new WarrantyDAO(emf);
+    static final ProductDAO productDAO = new ProductDAO(emf);
+    static final UserDAO userDAO = new UserDAO(emf);
 
     static final EmailService emailService = new EmailService(System.getenv("SENDGRID_API_KEY"));
     static final WarrantyScheduler scheduler = new WarrantyScheduler(warrantyDAO, emailService);

@@ -14,7 +14,7 @@ public class App {
      static void initiate(){
         final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
         XmlService xmlService = new XmlService();
-//        Populator populater = new Populator();
+        Populator populater = new Populator(emf);
 
         ProductController pController = new ProductController(emf);
         WarrantyController wController = new WarrantyController(emf);
@@ -30,7 +30,7 @@ public class App {
 
         long start = System.currentTimeMillis();
 
-//        populater.populateAndCreateEntities();
+        populater.populateAndCreateEntities();
 
         xmlService.extractAndPrintXML();
 

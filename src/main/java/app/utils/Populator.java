@@ -4,7 +4,6 @@ import app.daos.*;
 import app.entity.*;
 import app.persistence.IDAO;
 import app.persistence.IEntity;
-import app.services.persistenceServices.EntityManagerFactoryService;
 import app.services.validationServices.PasswordService;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -189,10 +188,10 @@ public class Populator {
     }
 
     public void populateAndCreateEntities(){
-        Populator populator = new Populator(EntityManagerFactoryService.getEntityManagerFactory());
+        Populator populator = new Populator(emf);
         populator.populate().forEach((k, v) -> System.out.println(k + ": " + v));
 
-        RetrieveDAO retrieveDAO = new RetrieveDAO(EntityManagerFactoryService.getEntityManagerFactory());
+        RetrieveDAO retrieveDAO = new RetrieveDAO(emf);
         System.out.println();
         System.out.println("\n#####RETRIEVED######");
         print("User's Products:", retrieveDAO.getAllProductsForUsers(3));
