@@ -19,6 +19,15 @@ public class ProductRegistrationDAO implements IDAO<ProductRegistration> {
     public ProductRegistration create(ProductRegistration p) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
+            if(p.getOwner() != null){
+                p.setOwner(em.merge(p.getOwner()));
+            }
+            if(p.getProduct() != null){
+                p.setProduct(em.merge(p.getProduct()));
+            }
+            if(p.getReceipt() != null){
+                p.setReceipt(em.merge(p.getReceipt()));
+            }
             em.persist(p);
             em.getTransaction().commit();
         return p;
