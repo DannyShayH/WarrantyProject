@@ -20,8 +20,7 @@ public class Receipt implements IEntity {
     @Column(name="id")
     private Long id;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name ="registration_id", unique = true)
+    @OneToOne(mappedBy = "receipt")
     private ProductRegistration registration;
 
     @Column(name="purchase_at", nullable = false)
