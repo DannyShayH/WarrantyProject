@@ -1,0 +1,89 @@
+2026-03-08 15:03:37 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-08 15:03:37 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-08 15:03:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 15:03:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78e16155
+2026-03-08 15:03:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 15:03:37 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-08 15:03:39 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-03-08 15:03:39 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 25.0.2+10-LTS
+2026-03-08 15:03:39 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-03-08 15:03:39 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@58c80957{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5f1db390{STARTED}}
+2026-03-08 15:03:39 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@58c80957{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5f1db390{STARTED}}
+2026-03-08 15:03:39 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@2fef48b9{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-03-08 15:03:39 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@49bc1f6c{STARTING}[12.1.6,sto=0] @17ms
+2026-03-08 15:03:39 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-03-08 15:03:39 [main] INFO  io.javalin.Javalin - Javalin started in 73ms \o/
+2026-03-08 15:03:39 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/
+2026-03-08 15:03:39 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-03-08 15:09:45 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-08 15:09:45 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-08 15:09:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 15:09:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78e16155
+2026-03-08 15:09:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 15:09:45 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-08 15:11:59 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-08 15:11:59 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-08 15:11:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 15:11:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78e16155
+2026-03-08 15:11:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 15:11:59 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-03-08 15:12:01 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 25.0.2+10-LTS
+2026-03-08 15:12:01 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-03-08 15:12:01 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@26f07261{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2b55ea4d{STARTED}}
+2026-03-08 15:12:01 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@26f07261{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2b55ea4d{STARTED}}
+2026-03-08 15:12:01 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@6b92714{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-03-08 15:12:01 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@38d895e8{STARTING}[12.1.6,sto=0] @17ms
+2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - Javalin started in 72ms \o/
+2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/
+2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
