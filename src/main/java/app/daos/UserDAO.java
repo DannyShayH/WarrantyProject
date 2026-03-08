@@ -66,7 +66,22 @@ public class UserDAO implements IDAO<User> {
             if(user == null)
                 throw new EntityNotFoundException("No entity found with id: "+ u.getId());
             em.getTransaction().begin();
-            em.remove(user);
+
+            em.createQuery("DELETE FROM ProductRegistration pr WHERE pr.owner.id = :id")
+                            .setParameter("id", u.getId()).executeUpdate();
+
+            em.createQuery("DELETE FROM Receipt r WHERE r.registration.owner.id = :id")
+                    .setParameter("id", u.getId()).executeUpdate();
+
+            em.createQuery("DELETE FROM Product p WHERE p.owner.id = :id")
+                    .setParameter("id", u.getId()).executeUpdate();
+
+            em.createQuery("DELETE FROM Warranty w WHERE w.product.owner.id = :id")
+                    .setParameter("id", u.getId()).executeUpdate();
+
+            em.clear();
+            User managedUser = em.find(User.class, u.getId());
+            em.remove(managedUser);
             em.getTransaction().commit();
             return user.getId();
         }
