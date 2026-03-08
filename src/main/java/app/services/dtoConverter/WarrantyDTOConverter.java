@@ -28,11 +28,7 @@ public class WarrantyDTOConverter {
         }
         warranty.setWarrantyMonths(warrantyDTO.getWarrantyMonths());
         warranty.setStartDate(warrantyDTO.getStartDate());
-        warranty.setEndDate(warrantyDTO.getEndDate());
-        warranty.setNotified90Days(warrantyDTO.isNotified90Days());
-        warranty.setNotified60Days(warrantyDTO.isNotified60Days());
-        warranty.setNotified30Days(warrantyDTO.isNotified30Days());
-        warranty.setNotifiedExpired(warrantyDTO.isNotifiedExpired());
+        warranty.calculateEndDate();
 
         return warranty;
     }
