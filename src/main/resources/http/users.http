@@ -1,5 +1,35 @@
-### GET request to example server
-GET https://examples.http-client.intellij.net/get
-    ?generated-in=IntelliJ IDEA
+@baseUrl = http://localhost:7070/user
 
-###
+### Get All Users
+
+GET {{baseUrl}}/all
+
+### Get User with ID
+
+GET {{baseUrl}}/1
+
+### Create new User
+
+POST {{baseUrl}}/
+Content-Type: application/json
+
+{
+    "email" : "somethingNewTest@gmail.com",
+    "password" : "12345678",
+    "createdAt" : "2026-03-08T13:20:00"
+}
+
+### Update User on ID
+
+PUT {{baseUrl}}/3
+Content-Type: application/json
+
+{
+  "email" : "newEmailAgain@gmail.com",
+  "password" : "12345678",
+  "createdAt" : "2026-03-08T13:20:00"
+}
+
+### Delete User on ID
+
+DELETE {{baseUrl}}/1
