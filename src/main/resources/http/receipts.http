@@ -1,5 +1,37 @@
-### GET request to example server
-GET https://examples.http-client.intellij.net/get
-    ?generated-in=IntelliJ IDEA
+@baseUrl = http://localhost:7070/receipt
 
-###
+### Get All Receipts
+
+GET {{baseUrl}}/all
+
+### Get Receipt with ID
+
+GET {{baseUrl}}/1
+
+### Create new Receipt
+
+POST {{baseUrl}}/
+Content-Type: application/json
+
+{
+  "productRegistrationId" : 1,
+  "purchasedAt" : "2026-04-05",
+  "description" : "A BRAND NEW IMAC",
+  "price" : 1500.30
+}
+
+### Update Receipt on ID
+
+PUT {{baseUrl}}/1
+Content-Type: application/json
+
+{
+  "productRegistrationId" : 1,
+  "purchasedAt" : "2026-04-05",
+  "description" : "A BRAND NEW Macbook Neo",
+  "price" : 1500.30
+}
+
+### Delete Receipt on ID
+
+DELETE {{baseUrl}}/1
