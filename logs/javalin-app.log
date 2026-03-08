@@ -87,3 +87,171 @@
 2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - Javalin started in 72ms \o/
 2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/
 2026-03-08 15:12:01 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-03-08 15:28:52 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-08 15:28:52 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-08 15:28:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 15:28:52 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78e16155
+2026-03-08 15:28:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 15:28:52 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-08 15:28:55 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-03-08 15:28:55 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 25.0.2+10-LTS
+2026-03-08 15:28:55 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-03-08 15:28:55 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@26f07261{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2b55ea4d{STARTED}}
+2026-03-08 15:28:55 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@26f07261{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2b55ea4d{STARTED}}
+2026-03-08 15:28:55 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@38d895e8{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-03-08 15:28:55 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@2f3d5cd{STARTING}[12.1.6,sto=0] @18ms
+2026-03-08 15:28:55 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-03-08 15:28:55 [main] INFO  io.javalin.Javalin - Javalin started in 73ms \o/
+2026-03-08 15:28:55 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/
+2026-03-08 15:28:55 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-03-08 15:29:48 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Creating User
+2026-03-08 15:29:48 [JettyServerThreadPool-55] DEBUG app - Received POST request with body {
+    "email" : "somethingNewTest@gmail.com",
+    "password" : "12345678",
+    "createdAt" : "2026-03-08T13:20:00"
+}
+2026-03-08 15:29:48 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Product Created Successfully
+2026-03-08 15:29:55 [JettyServerThreadPool-51] DEBUG app - Updating user with id 3
+2026-03-08 15:29:58 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Deleting user with id 1
+2026-03-08 15:30:08 [JettyServerThreadPool-53] INFO  app.controllers.ProductController - Creating Product
+2026-03-08 15:30:08 [JettyServerThreadPool-53] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 1
+}
+2026-03-08 15:30:18 [JettyServerThreadPool-55] DEBUG app - Updating product with id 1
+2026-03-08 15:30:35 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Creating User
+2026-03-08 15:30:35 [JettyServerThreadPool-55] DEBUG app - Received POST request with body {
+    "email" : "somethingNewTest@gmail.com",
+    "password" : "12345678",
+    "createdAt" : "2026-03-08T13:20:00"
+}
+2026-03-08 15:30:35 [JettyServerThreadPool-55] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23505
+2026-03-08 15:30:35 [JettyServerThreadPool-55] WARN  org.hibernate.orm.jdbc.error - ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(somethingNewTest@gmail.com) already exists.
+2026-03-08 15:30:48 [JettyServerThreadPool-49] DEBUG app - Updating user with id 3
+2026-03-08 15:30:51 [JettyServerThreadPool-50] INFO  app.controllers.ProductController - Deleting user with id 1
+2026-03-08 15:31:19 [JettyServerThreadPool-52] INFO  app.controllers.ProductController - Creating User
+2026-03-08 15:31:19 [JettyServerThreadPool-52] DEBUG app - Received POST request with body {
+    "email" : "somethingNewTest@gmail.com",
+    "password" : "12345678",
+    "createdAt" : "2026-03-08T13:20:00"
+}
+2026-03-08 15:31:19 [JettyServerThreadPool-52] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23505
+2026-03-08 15:31:19 [JettyServerThreadPool-52] WARN  org.hibernate.orm.jdbc.error - ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(somethingNewTest@gmail.com) already exists.
+2026-03-08 15:31:31 [JettyServerThreadPool-52] INFO  app.controllers.ProductController - Creating ProductRegistration
+2026-03-08 15:31:31 [JettyServerThreadPool-52] DEBUG app - Received POST request with body {
+    "userId" : 1,
+    "productId" : 2,
+    "purchasedAt" : "2026-04-05",
+    "registeredAt" : "2026-04-05"
+}
+2026-03-08 15:31:35 [JettyServerThreadPool-55] DEBUG app - Fetching productRegistration with id 1
+2026-03-08 15:31:37 [JettyServerThreadPool-53] DEBUG app - Updating productRegistration with id 4
+2026-03-08 15:31:40 [JettyServerThreadPool-51] INFO  app.controllers.ProductController - Deleting productRegistration with id 1
+2026-03-08 15:31:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-08 15:31:47 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-08 15:31:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 15:31:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78e16155
+2026-03-08 15:31:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 15:31:47 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-08 15:31:49 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-03-08 15:31:49 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 25.0.2+10-LTS
+2026-03-08 15:31:49 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-03-08 15:31:49 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@26f07261{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2b55ea4d{STARTED}}
+2026-03-08 15:31:49 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@26f07261{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2b55ea4d{STARTED}}
+2026-03-08 15:31:49 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@6de2cb6f{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-03-08 15:31:49 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@38d895e8{STARTING}[12.1.6,sto=0] @16ms
+2026-03-08 15:31:49 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-03-08 15:31:49 [main] INFO  io.javalin.Javalin - Javalin started in 67ms \o/
+2026-03-08 15:31:49 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/
+2026-03-08 15:31:49 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-03-08 15:31:56 [JettyServerThreadPool-51] DEBUG app - Fetching user with id 1
+2026-03-08 15:31:58 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Creating User
+2026-03-08 15:31:58 [JettyServerThreadPool-55] DEBUG app - Received POST request with body {
+    "email" : "somethingNewTest@gmail.com",
+    "password" : "12345678",
+    "createdAt" : "2026-03-08T13:20:00"
+}
+2026-03-08 15:31:58 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Product Created Successfully
+2026-03-08 15:32:05 [JettyServerThreadPool-53] DEBUG app - Updating user with id 3
+2026-03-08 15:32:14 [JettyServerThreadPool-50] DEBUG app - Fetching warranty with id 1
+2026-03-08 15:32:16 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Creating Warranty
+2026-03-08 15:32:16 [JettyServerThreadPool-55] DEBUG app - Received POST request with body {
+    "productId" : 1,
+    "warrantyMonths" : 60,
+    "startDate" : "2026-03-09"
+}
+2026-03-08 15:32:16 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-03-08 15:32:20 [JettyServerThreadPool-52] DEBUG app - Updating warranty with id 3
+2026-03-08 15:32:26 [JettyServerThreadPool-49] DEBUG app - Fetching receipt with id 1
+2026-03-08 15:32:29 [JettyServerThreadPool-52] INFO  app.controllers.ProductController - Creating Receipt
+2026-03-08 15:32:29 [JettyServerThreadPool-52] DEBUG app - Received POST request with body {
+  "productRegistrationId" : 1,
+  "purchasedAt" : "2026-04-05",
+  "description" : "A BRAND NEW IMAC",
+  "price" : 1500.30
+}
+2026-03-08 15:32:29 [JettyServerThreadPool-52] INFO  app.controllers.ProductController - Receipt Created Successfully
+2026-03-08 15:32:33 [JettyServerThreadPool-56] DEBUG app - Updating receipt with id 1
+2026-03-08 15:32:42 [JettyServerThreadPool-56] DEBUG app - Fetching product with id 1
+2026-03-08 15:32:45 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Creating Product
+2026-03-08 15:32:45 [JettyServerThreadPool-55] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 1
+}
+2026-03-08 15:32:45 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Product Created Successfully
+2026-03-08 15:32:49 [JettyServerThreadPool-56] DEBUG app - Updating product with id 1
+2026-03-08 15:32:55 [JettyServerThreadPool-56] DEBUG app - Fetching productRegistration with id 1
+2026-03-08 15:33:00 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - Creating ProductRegistration
+2026-03-08 15:33:00 [JettyServerThreadPool-55] DEBUG app - Received POST request with body {
+    "userId" : 1,
+    "productId" : 2,
+    "purchasedAt" : "2026-04-05",
+    "registeredAt" : "2026-04-05"
+}
+2026-03-08 15:33:00 [JettyServerThreadPool-55] INFO  app.controllers.ProductController - ProductRegistration Created Successfully
+2026-03-08 15:33:02 [JettyServerThreadPool-56] DEBUG app - Updating productRegistration with id 4
+2026-03-08 15:33:07 [JettyServerThreadPool-50] INFO  app.controllers.ProductController - Deleting user with id 1
+2026-03-08 15:33:10 [JettyServerThreadPool-56] INFO  app.controllers.ProductController - Deleting productRegistration with id 1
+2026-03-08 15:33:13 [JettyServerThreadPool-50] INFO  app.controllers.ProductController - Deleting warranty with id 1
+2026-03-08 15:33:15 [JettyServerThreadPool-56] INFO  app.controllers.ProductController - Deleting receipt with id 1
+2026-03-08 15:33:18 [JettyServerThreadPool-50] INFO  app.controllers.ProductController - Deleting product with id 1
