@@ -1,14 +1,14 @@
 @baseUrl = http://localhost:7070/productRegistration
 
-### Get All Products
+### Get All ProductRegistrations
 
 GET {{baseUrl}}/all
 
-### Get Product with ID
+### Get ProductRegistration with ID
 
 GET {{baseUrl}}/1
 
-### Create new Product
+### Create new ProductRegistration
 
 POST {{baseUrl}}/
 Content-Type: application/json
@@ -20,7 +20,7 @@ Content-Type: application/json
     "registeredAt" : "2026-04-05"
 }
 
-### Update Product on ID
+### Update ProductRegistration on ID
 
 PUT {{baseUrl}}/4
 Content-Type: application/json
@@ -32,6 +32,6 @@ Content-Type: application/json
     "registeredAt" : "2026-06-06"
 }
 
-### Delete Product on ID
+### Delete ProductRegistration on ID
 
 DELETE {{baseUrl}}/1
