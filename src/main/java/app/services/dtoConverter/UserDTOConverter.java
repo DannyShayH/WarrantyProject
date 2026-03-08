@@ -24,13 +24,6 @@ public class UserDTOConverter {
         if(userDTO.getId() != 0){
             user.setId(userDTO.getId());
         }
-        if(userDTO.getRegistrationList() != null){
-            List<ProductRegistration> registrations = userDTO.getRegistrationList()
-                    .stream()
-                    .map(registrationDTOConverter::fromDTO)
-                    .toList();
-        }
-
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
         user.setCreatedAt(userDTO.getCreatedAt());
