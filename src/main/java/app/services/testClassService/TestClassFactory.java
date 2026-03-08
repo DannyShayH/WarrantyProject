@@ -34,8 +34,7 @@ public class TestClassFactory {
         Warranty testWarranty = new Warranty();
         testWarranty.setStartDate(LocalDate.now().minusMonths(3));
         testWarranty.setWarrantyMonths(3);
-        testWarranty.setEndDate(testWarranty.getStartDate().plusMonths(testWarranty.getWarrantyMonths()));
-        warrantyDAO.create(testWarranty);
+        testWarranty.calculateEndDate();
 
         Product product = new Product();
         product.setOwner(testUser);

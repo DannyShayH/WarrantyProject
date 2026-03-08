@@ -22,9 +22,6 @@ public class ProductDAO implements IDAO<Product> {
             if(p.getOwner() != null){
                 p.setOwner(em.merge(p.getOwner()));
             }
-            if(p.getWarranty() != null){
-                p.setWarranty(em.merge(p.getWarranty()));
-            }
             em.persist(p);
             em.getTransaction().commit();
             return p;

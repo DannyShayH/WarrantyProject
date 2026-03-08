@@ -25,9 +25,6 @@ public class ProductRegistrationDAO implements IDAO<ProductRegistration> {
             if(p.getProduct() != null){
                 p.setProduct(em.merge(p.getProduct()));
             }
-            if(p.getReceipt() != null){
-                p.setReceipt(em.merge(p.getReceipt()));
-            }
             em.persist(p);
             em.getTransaction().commit();
         return p;
