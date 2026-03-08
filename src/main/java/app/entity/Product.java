@@ -22,7 +22,7 @@ public class Product implements IEntity {
     private String productName;
 
     @ManyToOne
-    @JoinColumn(name="owner", nullable = false)
+    @JoinColumn(name="owner")
     private User owner;
 
     @OneToOne(cascade = CascadeType.ALL)
