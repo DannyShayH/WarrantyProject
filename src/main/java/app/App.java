@@ -13,26 +13,15 @@ import jakarta.persistence.EntityManagerFactory;
 public class App {
      static void initiate(){
         final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
-        XmlService xmlService = new XmlService();
+        XmlService xmlService = new XmlService(emf);
         Populator populater = new Populator(emf);
-
-        ProductController pController = new ProductController(emf);
-        WarrantyController wController = new WarrantyController(emf);
-        UserController uController = new UserController(emf);
-        ReceiptController rController = new ReceiptController(emf);
-        ProductRegistrationController prController = new ProductRegistrationController(emf);
-
-        Routes routes = new Routes(pController,
-                wController,
-                uController,
-                rController,
-                prController);
+        Routes routes = new Routes();
 
         long start = System.currentTimeMillis();
 
         populater.populateAndCreateEntities();
 
-        xmlService.extractAndPrintXML();
+        xmlService.extractAndPersistXML();
 
         TestClassFactory.testClassWarranty();
 
