@@ -1,7 +1,9 @@
 package app.routes;
 
+import app.config.HibernateConfig;
 import app.controllers.*;
 import io.javalin.apibuilder.EndpointGroup;
+import jakarta.persistence.EntityManagerFactory;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 import static io.javalin.apibuilder.ApiBuilder.delete;
@@ -9,26 +11,15 @@ import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.put;
 
 public class Routes {
-    private final ProductController productController;
-    private final WarrantyController warrantyController;
-    private final UserController userController;
-    private final ReceiptController receiptController;
-    private final ProductRegistrationController productRegistrationController;
-
-    public Routes(ProductController productController,
-                  WarrantyController warrantyController,
-                  UserController userController,
-                  ReceiptController receiptController,
-                  ProductRegistrationController productRegistrationController) {
-
-        this.productController = productController;
-        this.warrantyController = warrantyController;
-        this.userController = userController;
-        this.receiptController = receiptController;
-        this.productRegistrationController = productRegistrationController;
-    }
+    final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
     public EndpointGroup getRoutes() {
+        ProductController productController = new ProductController(emf);
+        WarrantyController warrantyController = new WarrantyController(emf);
+        UserController userController = new UserController(emf);
+        ReceiptController receiptController = new ReceiptController(emf);
+       ProductRegistrationController productRegistrationController = new ProductRegistrationController(emf);
+
         return () -> {
             get("/", ctx -> ctx.result("Hello World"));
 
@@ -64,7 +55,7 @@ public class Routes {
                 delete("/{id}", receiptController::delete);
             });
 
-            path("productRegistration", () -> {
+            path("product-registration", () -> {
                 post("/", productRegistrationController::create);
                 get("/all", productRegistrationController::getAll);
                 get("/{id}", productRegistrationController::getById);
