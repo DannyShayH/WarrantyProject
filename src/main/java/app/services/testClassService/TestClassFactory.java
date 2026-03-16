@@ -26,7 +26,7 @@ public class TestClassFactory {
     public static void testClassWarranty() {
         User testUser = new User();
 
-        testUser.setEmail("danielhalawi22@gmail.com"); // your email
+        testUser.setEmail("danielhalawi22@gmail.com");
         testUser.setCreatedAt(LocalDateTime.now());
         testUser.setPassword("12345678");
         userDAO.create(testUser);
