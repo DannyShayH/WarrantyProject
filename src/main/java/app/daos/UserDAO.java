@@ -81,9 +81,10 @@ public class UserDAO implements IDAO<User> {
 
             em.clear();
             User managedUser = em.find(User.class, u.getId());
+            Long id = managedUser.getId();
             em.remove(managedUser);
             em.getTransaction().commit();
-            return user.getId();
+            return id;
         }
     }
 
