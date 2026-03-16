@@ -1,16 +1,16 @@
-@baseUrl = http://localhost:7070/product
-
 ### Get All Products
 
-GET {{baseUrl}}/all
+GET {{url}}/product/all
+Accept: application/json
 
 ### Get Product with ID
 
-GET {{baseUrl}}/1
+GET {{url}}/product/1
+Accept: application/json
 
 ### Create new Product
 
-POST {{baseUrl}}/
+POST {{url}}/product/
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 ### Update Product on ID
 
-PUT {{baseUrl}}/1
+PUT {{url}}/product/1
 Content-Type: application/json
 
 {
@@ -31,4 +31,4 @@ Content-Type: application/json
 
 ### Delete Product on ID
 
-DELETE {{baseUrl}}/1
+DELETE {{url}}/product/1

@@ -1,16 +1,16 @@
-@baseUrl = http://localhost:7070/warranty
-
 ### Get All Warranties
 
-GET {{baseUrl}}/all
+GET {{url}}/warranty/all
+Accept: application/json
 
 ### Get Warranty with ID
 
-GET {{baseUrl}}/1
+GET {{url}}/warranty/1
+Accept: application/json
 
 ### Create new Warranty
 
-POST {{baseUrl}}/
+POST {{url}}/warranty/
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ### Update Warranty on ID
 
-PUT {{baseUrl}}/3
+PUT {{url}}/warranty/3
 Content-Type: application/json
 
 {
@@ -32,4 +32,4 @@ Content-Type: application/json
 
 ### Delete Warranty on ID
 
-DELETE {{baseUrl}}/1
+DELETE {{url}}/warranty/1

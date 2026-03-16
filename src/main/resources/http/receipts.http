@@ -1,16 +1,16 @@
-@baseUrl = http://localhost:7070/receipt
-
 ### Get All Receipts
 
-GET {{baseUrl}}/all
+GET {{url}}/receipt/all
+Accept: application/json
 
 ### Get Receipt with ID
 
-GET {{baseUrl}}/1
+GET {{url}}/receipt/1
+Accept: application/json
 
 ### Create new Receipt
 
-POST {{baseUrl}}/
+POST {{url}}/receipt/
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 ### Update Receipt on ID
 
-PUT {{baseUrl}}/1
+PUT {{url}}/receipt/1
 Content-Type: application/json
 
 {
@@ -34,4 +34,4 @@ Content-Type: application/json
 
 ### Delete Receipt on ID
 
-DELETE {{baseUrl}}/1
+DELETE {{url}}/receipt/1
