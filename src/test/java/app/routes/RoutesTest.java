@@ -37,7 +37,9 @@ class RoutesTest {
 
     @AfterAll
     static void stop() {
-        app.stop();
+        if (app != null) {
+            app.stop();
+        }
     }
 
     @Test

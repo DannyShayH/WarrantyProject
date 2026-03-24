@@ -6,6 +6,7 @@ target/
 
 ### Config Properties ###
 *.properties
+!src/test/resources/config.properties
 
 ### IntelliJ IDEA ###
 .idea/
