@@ -3779,3 +3779,158 @@ jakarta.persistence.EntityNotFoundException: No entity found with id: 1
 2026-03-24 12:16:18 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@4c0930c4{HTTP/1.1, (http/1.1)}{0.0.0.0:7777}
 2026-03-24 12:16:18 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@23365142{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6549ce71{STOPPED}}
 2026-03-24 12:16:18 [main] INFO  io.javalin.Javalin - Javalin has stopped
+2026-03-24 12:18:45 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-24 12:18:45 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-24 12:18:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 12:18:46 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1ac4ccad
+2026-03-24 12:18:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 12:18:46 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-24 12:18:46 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-03-24 12:18:46 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-03-24 12:18:46 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-03-24 12:18:46 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@33837bd4{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@61c145cb{STARTED}}
+2026-03-24 12:18:46 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@33837bd4{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@61c145cb{STARTED}}
+2026-03-24 12:18:46 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@61ee706d{HTTP/1.1, (http/1.1)}{0.0.0.0:7777}
+2026-03-24 12:18:46 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@468f2a6f{STARTING}[12.1.6,sto=0] @19ms
+2026-03-24 12:18:46 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-03-24 12:18:46 [main] INFO  io.javalin.Javalin - Javalin started in 70ms \o/
+2026-03-24 12:18:46 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7777/api
+2026-03-24 12:18:46 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-03-24 12:18:47 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+2026-03-24 12:18:47 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@468f2a6f{STOPPING}[12.1.6,sto=0]
+2026-03-24 12:18:47 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@61ee706d{HTTP/1.1, (http/1.1)}{0.0.0.0:7777}
+2026-03-24 12:18:47 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@33837bd4{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@61c145cb{STOPPED}}
+2026-03-24 12:18:47 [main] INFO  io.javalin.Javalin - Javalin has stopped
+2026-03-24 16:27:08 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-24 16:27:08 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-24 16:27:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 16:27:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59072e9d
+2026-03-24 16:27:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 16:27:09 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-24 16:27:09 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-03-24 16:27:09 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 25.0.1
+2026-03-24 16:27:10 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-03-24 16:27:10 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@5a96f3cb{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@3e0704e2{STARTED}}
+2026-03-24 16:27:10 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@5a96f3cb{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@3e0704e2{STARTED}}
+2026-03-24 16:27:10 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@2e63dcfb{HTTP/1.1, (http/1.1)}{0.0.0.0:50060}
+2026-03-24 16:27:10 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@476a970c{STARTING}[12.1.6,sto=0] @35ms
+2026-03-24 16:27:10 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-03-24 16:27:10 [main] INFO  io.javalin.Javalin - Javalin started in 118ms \o/
+2026-03-24 16:27:10 [main] INFO  io.javalin.Javalin - Listening on http://localhost:50060/api
+2026-03-24 16:27:10 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-03-24 16:27:10 [JettyServerThreadPool-48] INFO  app.controllers.SecurityController - Creating User
+2026-03-24 16:27:10 [JettyServerThreadPool-48] DEBUG app - Received POST request with body {
+  "email" : "routes-test-4356398a-13e2-4d13-840a-e21833505250@example.com",
+  "password" : "12345678"
+}
+
+2026-03-24 16:27:10 [JettyServerThreadPool-48] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-03-24 16:27:11 [JettyServerThreadPool-42] INFO  app.controllers.SecurityController - Creating User
+2026-03-24 16:27:11 [JettyServerThreadPool-42] DEBUG app - Received POST request with body 
+2026-03-24 16:27:11 [JettyServerThreadPool-42] INFO  app.controllers.SecurityController - Creating User
+2026-03-24 16:27:11 [JettyServerThreadPool-42] DEBUG app - Received POST request with body {
+  "email" : "routes-test-e72c2463-e8fa-46d6-9eef-44225da729c5@example.com",
+  "password" : "12345678"
+}
+
+2026-03-24 16:27:11 [JettyServerThreadPool-42] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-03-24 16:27:11 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+2026-03-24 16:27:11 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@476a970c{STOPPING}[12.1.6,sto=0]
+2026-03-24 16:27:11 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@2e63dcfb{HTTP/1.1, (http/1.1)}{0.0.0.0:50060}
+2026-03-24 16:27:11 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@5a96f3cb{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@3e0704e2{STOPPED}}
+2026-03-24 16:27:11 [main] INFO  io.javalin.Javalin - Javalin has stopped
+2026-03-24 16:36:10 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-03-24 16:36:10 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-03-24 16:36:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 16:36:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@62db3891
+2026-03-24 16:36:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 16:36:11 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-03-24 16:36:11 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-03-24 16:36:11 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-03-24 16:36:11 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-03-24 16:36:11 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@5ffdd510{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@8c18bde{STARTED}}
+2026-03-24 16:36:11 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@5ffdd510{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@8c18bde{STARTED}}
+2026-03-24 16:36:11 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@20e48e63{HTTP/1.1, (http/1.1)}{0.0.0.0:50103}
+2026-03-24 16:36:11 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@6d7677d8{STARTING}[12.1.6,sto=0] @22ms
+2026-03-24 16:36:11 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-03-24 16:36:11 [main] INFO  io.javalin.Javalin - Javalin started in 83ms \o/
+2026-03-24 16:36:11 [main] INFO  io.javalin.Javalin - Listening on http://localhost:50103/api
+2026-03-24 16:36:11 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-03-24 16:36:12 [JettyServerThreadPool-32] INFO  app.controllers.SecurityController - Creating User
+2026-03-24 16:36:12 [JettyServerThreadPool-32] DEBUG app - Received POST request with body {
+  "email" : "routes-test-4c318691-1985-41e1-bb9a-5bd8899b65c0@example.com",
+  "password" : "12345678"
+}
+
+2026-03-24 16:36:12 [JettyServerThreadPool-32] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-03-24 16:36:12 [JettyServerThreadPool-32] INFO  app.controllers.SecurityController - Creating User
+2026-03-24 16:36:12 [JettyServerThreadPool-32] DEBUG app - Received POST request with body 
+2026-03-24 16:36:12 [JettyServerThreadPool-27] INFO  app.controllers.SecurityController - Creating User
+2026-03-24 16:36:12 [JettyServerThreadPool-27] DEBUG app - Received POST request with body {
+  "email" : "routes-test-710a6686-e160-4059-bf26-4a88bb258c7a@example.com",
+  "password" : "12345678"
+}
+
+2026-03-24 16:36:12 [JettyServerThreadPool-27] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-03-24 16:36:12 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+2026-03-24 16:36:12 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@6d7677d8{STOPPING}[12.1.6,sto=0]
+2026-03-24 16:36:12 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@20e48e63{HTTP/1.1, (http/1.1)}{0.0.0.0:50103}
+2026-03-24 16:36:12 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@5ffdd510{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@8c18bde{STOPPED}}
+2026-03-24 16:36:12 [main] INFO  io.javalin.Javalin - Javalin has stopped
