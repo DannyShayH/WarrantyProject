@@ -1,17 +1,17 @@
 ### Get All ProductRegistrations
-
 GET {{url}}/product-registration/all
 Accept: application/json
+Authorization: Bearer {{token}}
 
 ### Get ProductRegistration with ID
-
 GET {{url}}/product-registration/1
 Accept: application/json
+Authorization: Bearer {{token}}
 
 ### Create new ProductRegistration
-
 POST {{url}}/product-registration/
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "userId" : 1,
@@ -21,9 +21,9 @@ Content-Type: application/json
 }
 
 ### Update ProductRegistration on ID
-
 PUT {{url}}/product-registration/4
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "userId" : 2,
@@ -33,5 +33,5 @@ Content-Type: application/json
 }
 
 ### Delete ProductRegistration on ID
-
 DELETE {{url}}/product-registration/1
+Authorization: Bearer {{token}}

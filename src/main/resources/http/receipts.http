@@ -1,17 +1,17 @@
 ### Get All Receipts
-
 GET {{url}}/receipt/all
 Accept: application/json
+Authorization: Bearer {{token}}
 
 ### Get Receipt with ID
-
 GET {{url}}/receipt/1
 Accept: application/json
+Authorization: Bearer {{token}}
 
 ### Create new Receipt
-
 POST {{url}}/receipt/
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "productRegistrationId" : 1,
@@ -21,9 +21,9 @@ Content-Type: application/json
 }
 
 ### Update Receipt on ID
-
 PUT {{url}}/receipt/1
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "productRegistrationId" : 1,
@@ -33,5 +33,5 @@ Content-Type: application/json
 }
 
 ### Delete Receipt on ID
-
 DELETE {{url}}/receipt/1
+Authorization: Bearer {{token}}

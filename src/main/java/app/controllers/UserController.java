@@ -10,21 +10,13 @@ import org.slf4j.LoggerFactory;
 
 public class UserController {
     private final UserService userService;
-    private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private static final Logger debugLogger = LoggerFactory.getLogger("app");
 
     public UserController(EntityManagerFactory emf){
         this.userService = new UserService(emf);
     }
 
-    public void create(Context ctx){
-        logger.info("Creating User");
-        debugLogger.debug("Received POST request with body {}", ctx.body());
-        UserDTO userDTO = ctx.bodyAsClass(UserDTO.class);
-        ctx.json(userService.create(userDTO));
-        ctx.status(201);
-        logger.info("Product Created Successfully");
-    }
 
     public void getById(Context ctx){
         long id = Long.parseLong(ctx.pathParam("id"));

@@ -1,5 +1,6 @@
 package app.config;
 
+import app.controllers.SecurityController;
 import app.routes.Routes;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
@@ -9,6 +10,7 @@ import io.javalin.config.JavalinConfig;
 import io.javalin.http.HttpStatus;
 import io.javalin.json.JavalinJackson;
 import io.javalin.validation.ValidationException;
+import jakarta.persistence.EntityManagerFactory;
 
 import java.util.Map;
 

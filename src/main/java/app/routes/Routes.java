@@ -2,6 +2,7 @@ package app.routes;
 
 import app.config.HibernateConfig;
 import app.controllers.*;
+import app.enums.RouteRole;
 import io.javalin.apibuilder.EndpointGroup;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -18,49 +19,57 @@ public class Routes {
         WarrantyController warrantyController = new WarrantyController(emf);
         UserController userController = new UserController(emf);
         ReceiptController receiptController = new ReceiptController(emf);
-       ProductRegistrationController productRegistrationController = new ProductRegistrationController(emf);
+        ProductRegistrationController productRegistrationController = new ProductRegistrationController(emf);
+        SecurityController securityController = new SecurityController(emf);
 
         return () -> {
+            beforeMatched(securityController::authenticate);
+            beforeMatched(securityController::authorize);
+
             get("/", ctx -> ctx.result("Hello World"));
 
             path("product", () -> {
-                post("/", productController::create);
-                get("/all", productController::getAll);
-                get("/{id}", productController::getById);
-                put("/{id}", productController::update);
-                delete("/{id}", productController::delete);
+                post("/", productController::create, RouteRole.USER);
+                get("/all", productController::getAll, RouteRole.USER);
+                get("/{id}", productController::getById, RouteRole.USER);
+                put("/{id}", productController::update, RouteRole.USER);
+                delete("/{id}", productController::delete, RouteRole.USER);
             });
 
             path("warranty", () -> {
-                post("/", warrantyController::create);
-                get("/all", warrantyController::getAll);
-                get("/{id}", warrantyController::getById);
-                put("/{id}", warrantyController::update);
-                delete("/{id}", warrantyController::delete);
+                post("/", warrantyController::create, RouteRole.USER);
+                get("/all", warrantyController::getAll, RouteRole.USER);
+                get("/{id}", warrantyController::getById, RouteRole.USER);
+                put("/{id}", warrantyController::update, RouteRole.USER);
+                delete("/{id}", warrantyController::delete, RouteRole.USER);
             });
 
             path("user", () -> {
-                post("/", userController::create);
-                get("/all", userController::getAll);
-                get("/{id}", userController::getById);
-                put("/{id}", userController::update);
-                delete("/{id}", userController::delete);
+                get("/all", userController::getAll, RouteRole.USER, RouteRole.ADMIN);
+                get("/{id}", userController::getById, RouteRole.USER, RouteRole.ADMIN);
+                put("/{id}", userController::update, RouteRole.USER, RouteRole.ADMIN);
+                delete("/{id}", userController::delete, RouteRole.USER, RouteRole.ADMIN);
             });
 
             path("receipt", () -> {
-                post("/", receiptController::create);
-                get("/all", receiptController::getAll);
-                get("/{id}", receiptController::getById);
-                put("/{id}", receiptController::update);
-                delete("/{id}", receiptController::delete);
+                post("/", receiptController::create, RouteRole.USER);
+                get("/all", receiptController::getAll, RouteRole.USER);
+                get("/{id}", receiptController::getById, RouteRole.USER);
+                put("/{id}", receiptController::update, RouteRole.USER);
+                delete("/{id}", receiptController::delete, RouteRole.USER);
             });
 
             path("product-registration", () -> {
-                post("/", productRegistrationController::create);
-                get("/all", productRegistrationController::getAll);
-                get("/{id}", productRegistrationController::getById);
-                put("/{id}", productRegistrationController::update);
-                delete("/{id}", productRegistrationController::delete);
+                post("/", productRegistrationController::create, RouteRole.USER);
+                get("/all", productRegistrationController::getAll, RouteRole.USER);
+                get("/{id}", productRegistrationController::getById, RouteRole.USER);
+                put("/{id}", productRegistrationController::update, RouteRole.USER);
+                delete("/{id}", productRegistrationController::delete, RouteRole.USER);
+            });
+
+            path("security", () ->{
+               post("/login", securityController::login, RouteRole.ANYONE);
+               post("/register", securityController::register, RouteRole.ANYONE);
             });
         };
     }

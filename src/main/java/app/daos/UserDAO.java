@@ -28,11 +28,13 @@ public class UserDAO implements IDAO<User> {
 
     public User findByEmail(String email) {
         try (EntityManager em = emf.createEntityManager()) {
-            User user = em.find(User.class, email);
-            if (user == null) {
+            try {
+                return em.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
+                        .setParameter("email", email)
+                        .getSingleResult();
+            } catch (NoResultException e) {
                 throw new EntityNotFoundException("No entity found with this email: " + email);
             }
-                return user;
         }
     }
 
@@ -43,6 +45,22 @@ public class UserDAO implements IDAO<User> {
             if (user == null)
                 throw new EntityNotFoundException("No entity found with id: " + id);
             return user;
+        }
+    }
+
+    public User getByIDWithRegistrations(Long id) {
+        try (EntityManager em = emf.createEntityManager()) {
+            try {
+                return em.createQuery(
+                                "SELECT DISTINCT u FROM User u " +
+                                        "LEFT JOIN FETCH u.registrationlist " +
+                                        "WHERE u.id = :id",
+                                User.class)
+                        .setParameter("id", id)
+                        .getSingleResult();
+            } catch (NoResultException e) {
+                throw new EntityNotFoundException("No entity found with id: " + id);
+            }
         }
     }
 
@@ -95,4 +113,3 @@ public class UserDAO implements IDAO<User> {
         }
     }
 }
-

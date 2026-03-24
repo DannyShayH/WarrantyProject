@@ -1,6 +1,7 @@
 package app.daos;
 
 import app.entity.Product;
+import app.entity.ProductRegistration;
 import app.persistence.IDAO;
 import jakarta.persistence.*;
 
@@ -59,18 +60,23 @@ public class ProductDAO implements IDAO<Product> {
                 throw new EntityNotFoundException("No entity found with id: "+ p.getId());
             em.getTransaction().begin();
 
-            em.createQuery("DELETE FROM Receipt r WHERE r.registration IN " +
-                    "(SELECT pr FROM ProductRegistration pr WHERE pr.product.id = :id)")
+            var receiptIds = em.createQuery(
+                    "SELECT pr.receipt.id FROM ProductRegistration pr " +
+                            "WHERE pr.product.id = :id AND pr.receipt IS NOT NULL", Long.class)
                             .setParameter("id", p.getId())
-                                    .executeUpdate();
-
+                            .getResultList();
             em.createQuery("DELETE FROM ProductRegistration pr WHERE pr.product.id = :id")
-                    .setParameter("id", p.getId())
-                    .executeUpdate();
+                            .setParameter("id", p.getId())
+                            .executeUpdate();
+            if(!receiptIds.isEmpty()){
+                em.createQuery("DELETE FROM Receipt r WHERE r.id IN :ids")
+                        .setParameter("ids", receiptIds)
+                        .executeUpdate();
+            }
 
             em.remove(product);
             em.getTransaction().commit();
-            return product.getId();
+            return p.getId();
         }
     }
 

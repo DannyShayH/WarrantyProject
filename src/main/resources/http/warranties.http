@@ -1,17 +1,17 @@
 ### Get All Warranties
-
 GET {{url}}/warranty/all
 Accept: application/json
+Authorization: Bearer {{token}}
 
 ### Get Warranty with ID
-
 GET {{url}}/warranty/1
 Accept: application/json
+Authorization: Bearer {{token}}
 
 ### Create new Warranty
-
 POST {{url}}/warranty/
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "productId" : 1,
@@ -20,9 +20,9 @@ Content-Type: application/json
 }
 
 ### Update Warranty on ID
-
 PUT {{url}}/warranty/3
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "productId" : 2,
@@ -31,5 +31,5 @@ Content-Type: application/json
 }
 
 ### Delete Warranty on ID
-
 DELETE {{url}}/warranty/1
+Authorization: Bearer {{token}}

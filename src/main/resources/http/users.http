@@ -1,28 +1,40 @@
 ### Get All Users
-
 GET {{url}}/user/all
 Accept: application/json
+Authorization: Bearer {{token}}
 
 ### Get User with ID
-
 GET {{url}}/user/1
 Accept: application/json
+Authorization: Bearer {{token}}
 
-### Create new User
-
-POST {{url}}/user/
+### Register secure User
+POST {{url}}/security/register
 Content-Type: application/json
 
 {
-    "email" : "somethingNewTest@gmail.com",
-    "password" : "12345678",
-    "createdAt" : "2026-03-08T13:20:00"
+  "email": "somethingNewTest@gmail.com",
+  "password": "12345678"
 }
 
-### Update User on ID
+### Login - Token
+POST {{url}}/security/login
+Content-Type: application/json
 
+{
+  "email": "somethingNewTest@gmail.com",
+  "password": "12345678"
+}
+
+### Get all products with authorization
+GET {{url}}/product/all
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### Update User on ID
 PUT {{url}}/user/3
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "email" : "newEmailAgain@gmail.com",
@@ -31,5 +43,5 @@ Content-Type: application/json
 }
 
 ### Delete User on ID
-
 DELETE {{url}}/user/1
+Authorization: Bearer {{token}}

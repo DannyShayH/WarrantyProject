@@ -15,5 +15,6 @@ final class EntityRegistry {
         configuration.addAnnotatedClass(Warranty.class);
         configuration.addAnnotatedClass(ProductRegistration.class);
         configuration.addAnnotatedClass(LawData.class);
+        configuration.addAnnotatedClass(Role.class);
     }
 }
