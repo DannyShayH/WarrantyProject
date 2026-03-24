@@ -22,10 +22,10 @@ class RoutesTest {
         Routes routes = new Routes();
 
         ApplicationConfig config = new ApplicationConfig(routes);
-        app = config.startServer(7070);
+        app = config.startServer(7777);
 
         RestAssured.baseURI = "http://localhost";
-        RestAssured.port = 7070;
+        RestAssured.port = 7777;
         RestAssured.basePath = "/api";
     }
 
@@ -49,8 +49,7 @@ class RoutesTest {
         String userJson = """
     {
       "email" : "TestMail@gmail.com",
-      "password" : "12345678",
-      "createdAt" : "2026-02-05T13:20:00"
+      "password" : "12345678"
     }
     """;
 
@@ -62,8 +61,7 @@ class RoutesTest {
                 .then()
                 .statusCode(201)
                 .body("email", equalTo("TestMail@gmail.com"))
-                .body("password", equalTo("12345678"))
-                .body("createdAt", equalTo("2026-02-05T13:20:00"));
+                .body("password", equalTo("12345678"));
     }
 
     @Test
