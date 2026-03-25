@@ -68,6 +68,7 @@ public class Routes {
             });
 
             path("security", () ->{
+               get("/healthcheck", securityController::healthCheck, RouteRole.ANYONE);
                post("/login", securityController::login, RouteRole.ANYONE);
                post("/register", securityController::register, RouteRole.ANYONE);
             });

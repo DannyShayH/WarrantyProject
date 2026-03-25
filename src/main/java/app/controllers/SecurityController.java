@@ -103,4 +103,8 @@ public class SecurityController implements ISecurityController {
             throw new ForbiddenResponse("User was not authorized with roles: " +
                     user.roles() + ". Needed roles are: " + allowedRoles);
     }
+
+    public void healthCheck(Context ctx) {
+        ctx.status(200).json("{\"msg\": \"API is up and running\"}");
+    }
 }

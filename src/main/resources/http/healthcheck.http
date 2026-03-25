@@ -1,0 +1,4 @@
+### Check that api is running
+
+GET {{url}}/security/healthcheck
+Accept: application/json
