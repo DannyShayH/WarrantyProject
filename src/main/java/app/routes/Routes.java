@@ -67,7 +67,7 @@ public class Routes {
                 delete("/{id}", productRegistrationController::delete, RouteRole.USER);
             });
 
-            path("security", () ->{
+            path("security", () -> {
                get("/healthcheck", securityController::healthCheck, RouteRole.ANYONE);
                post("/login", securityController::login, RouteRole.ANYONE);
                post("/register", securityController::register, RouteRole.ANYONE);
