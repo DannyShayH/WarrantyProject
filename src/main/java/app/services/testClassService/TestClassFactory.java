@@ -43,9 +43,6 @@ public class TestClassFactory {
         testWarranty.setProduct(product);
         productDAO.create(product);
 
-
         scheduler.checkWarranties();
-
-        System.out.println("Test Sent to Email");
     }
 }

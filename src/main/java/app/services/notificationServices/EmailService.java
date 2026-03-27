@@ -2,6 +2,7 @@ package app.services.notificationServices;
 
 import com.sendgrid.Method;
 import com.sendgrid.Request;
+import com.sendgrid.Response;
 import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
@@ -35,6 +36,10 @@ public class EmailService {
             request.setBody(mail.build());
 
             sg.api(request);
+
+            Response response = sg.api(request);
+            System.out.println("Email sent - Status code: " + response.getStatusCode());
+
         } catch(IOException e){
             try {
                 throw e;
