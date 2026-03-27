@@ -38,10 +38,12 @@ public class WarrantyScheduler {
 
     public void checkWarranties(){
         Set<Warranty> warranties = warrantyDAO.get();
+        System.out.println("Total warranties found: " + warranties.size());
         LocalDate today = LocalDate.now();
 
         for(Warranty warranty : warranties){
             long daysLeft = ChronoUnit.DAYS.between(today, warranty.calculateEndDate());
+            System.out.println("Warranty ID: " + warranty.getId() + "days left: " + daysLeft);
 
             if(daysLeft == 90 && !warranty.isNotified90Days()) {
             sendAndMark(warranty, 90);
