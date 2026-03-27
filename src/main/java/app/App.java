@@ -24,7 +24,7 @@ public class App {
 
         xmlService.extractAndPersistXML();
 
-        TestClassFactory.testClassWarranty();
+//        TestClassFactory.testClassWarranty();
 
         SendGridService.sendGridService();
 
