@@ -1,30 +1,48 @@
-package app.routes;
+package app.config;
 
-import app.config.ApplicationConfig;
-import app.config.HibernateConfig;
+import app.routes.Routes;
 import io.javalin.Javalin;
 import io.restassured.RestAssured;
 import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.*;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.net.ServerSocket;
+import java.util.Properties;
 import java.util.UUID;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
+@Testcontainers
 class RoutesTest {
 
     private static Javalin app;
     private static EntityManagerFactory emf;
     private static int port;
 
-    @BeforeAll
-    static void init() {
+    @Container
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15-alpine")
+            .withDatabaseName("testdb")
+            .withUsername("test")
+            .withPassword("test");
 
-        emf = HibernateConfig.getEntityManagerFactory();
-        Routes routes = new Routes();
+    @BeforeAll
+    static void setup() {
+        if (!postgres.isRunning()) {
+            postgres.start();
+        }
+        Properties props = HibernateBaseProperties.createBase();
+        props.put("hibernate.connection.url", postgres.getJdbcUrl());
+        props.put("hibernate.connection.username", postgres.getUsername());
+        props.put("hibernate.connection.password", postgres.getPassword());
+        props.put("hibernate.hbm2ddl.auto", "create-drop");
+        emf = HibernateEmfBuilder.build(props);
+
+        Routes routes = new Routes(emf);
 
         ApplicationConfig config = new ApplicationConfig(routes);
         port = findFreePort();
@@ -39,6 +57,9 @@ class RoutesTest {
     static void stop() {
         if (app != null) {
             app.stop();
+        }
+        if (emf != null) {
+            emf.close();
         }
     }
 

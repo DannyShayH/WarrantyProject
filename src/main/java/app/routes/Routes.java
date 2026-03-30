@@ -12,7 +12,15 @@ import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.put;
 
 public class Routes {
-    final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+    private final EntityManagerFactory emf;
+
+    public Routes() {
+        this(HibernateConfig.getEntityManagerFactory());
+    }
+
+    public Routes(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
 
     public EndpointGroup getRoutes() {
         ProductController productController = new ProductController(emf);
