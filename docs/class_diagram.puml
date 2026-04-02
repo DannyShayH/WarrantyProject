@@ -1,0 +1,245 @@
+@startuml
+
+title WarrantyProject - Class Diagram (Entities + DAO Layer)
+
+!pragma layout smetana
+
+  class User {
+    - Long id
+    - String email
+    - String password
+    - LocalDateTime createdAt
+    - List<ProductRegistration> registrationlist
+    - Set<Role> roles
+
+    + User()
+    + User(String email, String hashedPassword)
+    + Set<String> getRolesAsStrings()
+    + boolean verifyPassword(String pw)
+    + void addRole(Role role)
+    + void removeRole(String role)
+  }
+
+  class Role {
+    - String roleName
+
+    + Role()
+    + Role(String roleName)
+  }
+
+  class Product {
+    - Long id
+    - String productName
+    - User owner
+    - Warranty warranty
+
+    + Product()
+  }
+
+  class Warranty {
+    - Long id
+    - Product product
+    - int warrantyMonths
+    - LocalDate startDate
+    - LocalDate endDate
+    - boolean notified90Days
+    - boolean notified60Days
+    - boolean notified30Days
+    - boolean notifiedExpired
+
+    + Warranty()
+    + LocalDate calculateEndDate()
+  }
+
+  class ProductRegistration {
+    - Long id
+    - User owner
+    - Product product
+    - Receipt receipt
+    - LocalDate purchasedAt
+    - LocalDate registeredAt
+
+    + ProductRegistration()
+  }
+
+  class Receipt {
+    - Long id
+    - ProductRegistration registration
+    - LocalDate purchasedAt
+    - String description
+    - double price
+
+    + Receipt()
+  }
+
+  class LawData {
+    - Long id
+    - String title
+    - String content
+
+    + LawData()
+  }
+
+  interface IEntity {
+    + Long getId()
+  }
+
+  interface "IDAO<T>" as IDAO {
+    + T create(T t)
+    + Set<T> get()
+    + T getByID(Long id)
+    + T update(T t)
+    + Long delete(T t)
+  }
+
+  interface IRetrieveDAO {
+    + Set<Product> getAllProductsForUsers(long userId)
+    + Set<User> getAllUsersForProduct(String productName)
+    + Set<Product> getProductsWithUserEmailDomain(String domain)
+    + Set<Warranty> getAllWarrantiesForUsers(long userId)
+    + Set<Receipt> getAllReceiptForUsers(long userId)
+    + Set<Receipt> getReceiptWithSpecificPrice(double price)
+    + Set<Receipt> getReceiptWithPriceRange(double price)
+  }
+
+  interface ISecurityUser {
+    + Set<String> getRolesAsStrings()
+    + boolean verifyPassword(String pw)
+    + void addRole(Role role)
+    + void removeRole(String role)
+  }
+
+  interface ISecurityDAO {
+    + User getVerifiedUser(String username, String password)
+    + User createUser(String username, String password)
+    + Role createRole(String role)
+    + User addUserRole(String username, String role)
+  }
+
+
+  class UserDAO {
+    - EntityManagerFactory emf
+
+    + UserDAO(EntityManagerFactory emf)
+    + User create(User u)
+    + User findByEmail(String email)
+    + User getByID(Long id)
+    + User getByIDWithRegistrations(Long id)
+    + User update(User u)
+    + Long delete(User u)
+    + Set<User> get()
+  }
+
+  class ProductDAO {
+    - EntityManagerFactory emf
+
+    + ProductDAO(EntityManagerFactory emf)
+    + Product create(Product p)
+    + Product getByID(Long id)
+    + Product update(Product p)
+    + Long delete(Product p)
+    + Set<Product> get()
+  }
+
+  class WarrantyDAO {
+    - EntityManagerFactory emf
+
+    + WarrantyDAO(EntityManagerFactory emf)
+    + Warranty create(Warranty w)
+    + Warranty getByID(Long id)
+    + Warranty update(Warranty w)
+    + Long delete(Warranty w)
+    + Set<Warranty> get()
+  }
+
+  class ReceiptDAO {
+    - EntityManagerFactory emf
+
+    + ReceiptDAO(EntityManagerFactory emf)
+    + Receipt create(Receipt r)
+    + Receipt getByID(Long id)
+    + Receipt update(Receipt r)
+    + Long delete(Receipt r)
+    + Set<Receipt> get()
+  }
+
+  class ProductRegistrationDAO {
+    - EntityManagerFactory emf
+
+    + ProductRegistrationDAO(EntityManagerFactory emf)
+    + ProductRegistration create(ProductRegistration pr)
+    + ProductRegistration getByID(Long id)
+    + ProductRegistration update(ProductRegistration pr)
+    + Long delete(ProductRegistration pr)
+    + Set<ProductRegistration> get()
+  }
+
+  class LawDataDAO {
+    - EntityManagerFactory emf
+
+    + LawDataDAO(EntityManagerFactory emf)
+    + LawData create(LawData lawData)
+    + Set<LawData> get()
+    + LawData getByID(Long id)
+    + LawData update(LawData lawData)
+    + Long delete(LawData lawData)
+  }
+
+  class RetrieveDAO {
+    - EntityManagerFactory emf
+
+    + RetrieveDAO(EntityManagerFactory emf)
+    + Set<Product> getAllProductsForUsers(long userId)
+    + Set<User> getAllUsersForProduct(String productName)
+    + Set<Warranty> getAllWarrantiesForUsers(long userId)
+    + Set<Receipt> getAllReceiptForUsers(long userId)
+    + Set<Receipt> getReceiptWithSpecificPrice(double price)
+    + Set<Receipt> getReceiptWithPriceRange(double price)
+    + Set<Product> getProductsWithUserEmailDomain(String domain)
+  }
+
+  class SecurityDAO {
+    - EntityManagerFactory emf
+
+    + SecurityDAO(EntityManagerFactory emf)
+    + User getVerifiedUser(String email, String password)
+    + User createUser(String email, String password)
+    + Role createRole(String role)
+    + User addUserRole(String email, String role)
+  }
+
+' ===== Interface implementations =====
+User ..|> IEntity
+Product ..|> IEntity
+Warranty ..|> IEntity
+Receipt ..|> IEntity
+ProductRegistration ..|> IEntity
+LawData ..|> IEntity
+
+User ..|> ISecurityUser
+
+UserDAO ..|> IDAO : IDAO<User>
+ProductDAO ..|> IDAO : IDAO<Product>
+WarrantyDAO ..|> IDAO : IDAO<Warranty>
+ReceiptDAO ..|> IDAO : IDAO<Receipt>
+ProductRegistrationDAO ..|> IDAO : IDAO<ProductRegistration>
+LawDataDAO ..|> IDAO : IDAO<LawData>
+
+RetrieveDAO ..|> IRetrieveDAO
+SecurityDAO ..|> ISecurityDAO
+
+' ===== JPA relationships (as implemented) =====
+User "1" o-- "*" ProductRegistration : registrationlist
+User "*" -- "*" Role : roles
+
+ProductRegistration "*" --> "1" User : owner
+ProductRegistration "*" --> "1" Product : product
+
+ProductRegistration "1" --> "0..1" Receipt : receipt
+Receipt "0..1" --> "1" ProductRegistration : registration
+
+User "1" <-- "0..*" Product : owner
+Product "1" *-- "0..1" Warranty : warranty
+Warranty "0..1" --> "1" Product : product
+
+@enduml
