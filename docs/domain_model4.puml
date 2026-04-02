@@ -1,0 +1,31 @@
+@startuml
+top to bottom direction
+skinparam linetype ortho
+!pragma layout smetana
+
+class User
+class ProductRegistration
+class Product
+class Receipt
+class Warranty
+class Role
+class LawData
+
+User "1" --> "*" ProductRegistration
+ProductRegistration "*" --> "1" Product
+Product "*" --> "1" User : owner
+Product "1" --> "1" Warranty : warranty
+ProductRegistration "1" --> "1" Receipt : receipt
+
+User "*" -- "*" Role : roles (EAGER)
+
+User -[hidden]-> ProductRegistration
+ProductRegistration -[hidden]-> Product
+Product -[hidden]-> Warranty
+
+ProductRegistration -[hidden]up-> Receipt
+User -[hidden]right-> Role
+
+LawData -[hidden]right-> Warranty
+
+@enduml
