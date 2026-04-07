@@ -14,7 +14,7 @@ Portfolio website:
 https://dannyshayh.github.io/Portfolio/
 
 Project overview video (max 5 min):  
-<LINK>
+https://youtu.be/9xVua2tuYdw
 
 Deployed application (optional):  
 https://warrantyproject.greymansshop.dk/api/routes

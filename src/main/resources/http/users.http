@@ -4,7 +4,7 @@ Accept: application/json
 Authorization: Bearer {{token}}
 
 ### Get User with ID
-GET {{url}}/user/1
+GET {{url}}/user/3
 Accept: application/json
 Authorization: Bearer {{token}}
 
@@ -13,7 +13,7 @@ POST {{url}}/security/register
 Content-Type: application/json
 
 {
-  "email": "somethingNewTest@gmail.com",
+  "email": "somethingNew3Test@gmail.com",
   "password": "12345678"
 }
 
@@ -22,7 +22,7 @@ POST {{url}}/security/login
 Content-Type: application/json
 
 {
-  "email": "somethingNewTest@gmail.com",
+  "email": "somethingNew3Test@gmail.com",
   "password": "12345678"
 }
 
@@ -45,5 +45,5 @@ Authorization: Bearer {{token}}
 }
 
 ### Delete User on ID
-DELETE {{url}}/user/1
+DELETE {{url}}/user/2
 Authorization: Bearer {{token}}
