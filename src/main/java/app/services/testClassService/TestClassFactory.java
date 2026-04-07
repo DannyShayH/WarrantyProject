@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 
 public class TestClassFactory {
     static final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
-   static final WarrantyDAO warrantyDAO = new WarrantyDAO(emf);
+    static final WarrantyDAO warrantyDAO = new WarrantyDAO(emf);
     static final ProductDAO productDAO = new ProductDAO(emf);
     static final UserDAO userDAO = new UserDAO(emf);
 
