@@ -1,6 +1,5 @@
 package app.services.notificationServices;
 
-import app.controllers.UserController;
 import app.daos.WarrantyDAO;
 import app.entity.Warranty;
 import org.slf4j.Logger;
