@@ -1,7 +1,10 @@
 package app.services.notificationServices;
 
+import app.controllers.UserController;
 import app.daos.WarrantyDAO;
 import app.entity.Warranty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -15,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class WarrantyScheduler {
 
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-
+    private static final Logger logger = LoggerFactory.getLogger(WarrantyScheduler.class);
     private final WarrantyDAO warrantyDAO;
     private final EmailService emailService;
 
@@ -26,8 +29,12 @@ public class WarrantyScheduler {
 
     public void start(){
         Runnable task = () -> {
-            System.out.println("Checking Warranty");
-            checkWarranties();
+            try {
+                logger.debug("Checking Warranty");
+                checkWarranties();
+            } catch (Exception e) {
+                logger.error("WarrantyScheduler run failed", e);
+            }
         };
 
         long initialDelay = computeInitialDelay();
