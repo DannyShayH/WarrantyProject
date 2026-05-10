@@ -4866,3 +4866,1420 @@ jakarta.persistence.EntityNotFoundException: No entity found with id: 1
   "password": "12345678"
 }
 2026-04-07 16:56:09 [JettyServerThreadPool-33] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-04-10 16:16:18 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-04-10 16:16:18 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-04-10 16:16:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-10 16:16:18 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b02e036
+2026-04-10 16:16:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-10 16:16:18 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-04-10 16:16:20 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-04-10 16:16:20 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-04-10 16:16:20 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-04-10 16:16:20 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@5b2ade46{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2087c939{STARTED}}
+2026-04-10 16:16:20 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@5b2ade46{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@2087c939{STARTED}}
+2026-04-10 16:16:20 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@1af6d656{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-04-10 16:16:20 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@4acdf6e7{STARTING}[12.1.6,sto=0] @20ms
+2026-04-10 16:16:20 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-04-10 16:16:20 [main] INFO  io.javalin.Javalin - Javalin started in 75ms \o/
+2026-04-10 16:16:20 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-04-10 16:16:20 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-04-10 16:16:25 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Creating User
+2026-04-10 16:16:25 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {
+  "email": "somethingNew4Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-10 16:16:25 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-04-10 16:16:26 [JettyServerThreadPool-31] INFO  app.controllers.SecurityController - Creating User
+2026-04-10 16:16:26 [JettyServerThreadPool-31] DEBUG app - Received POST request with body {
+  "email": "somethingNew4Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-10 16:16:26 [JettyServerThreadPool-31] WARN  io.javalin.Javalin - Uncaught exception
+org.hibernate.query.QueryTypeMismatchException: Result type is 'Long' but the query returned a 'User'
+	at org.hibernate.sql.results.internal.RowTransformerCheckingImpl.transformRow(RowTransformerCheckingImpl.java:36)
+	at org.hibernate.sql.results.internal.StandardRowReader.getResult(StandardRowReader.java:159)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:138)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.read(ListResultsConsumer.java:243)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.readRows(ListResultsConsumer.java:233)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:164)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.Query.getResultList(Query.java:121)
+	at app.daos.SecurityDAO.createUser(SecurityDAO.java:47)
+	at app.controllers.SecurityController.register(SecurityController.java:59)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:196)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-04-10 16:16:39 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Creating User
+2026-04-10 16:16:39 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {
+  "email": "somethingNew4Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-10 16:16:39 [JettyServerThreadPool-35] WARN  io.javalin.Javalin - Uncaught exception
+org.hibernate.query.QueryTypeMismatchException: Result type is 'Long' but the query returned a 'User'
+	at org.hibernate.sql.results.internal.RowTransformerCheckingImpl.transformRow(RowTransformerCheckingImpl.java:36)
+	at org.hibernate.sql.results.internal.StandardRowReader.getResult(StandardRowReader.java:159)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:138)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.read(ListResultsConsumer.java:243)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.readRows(ListResultsConsumer.java:233)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:164)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.Query.getResultList(Query.java:121)
+	at app.daos.SecurityDAO.createUser(SecurityDAO.java:47)
+	at app.controllers.SecurityController.register(SecurityController.java:59)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-04-10 16:17:34 [JettyServerThreadPool-30] INFO  app.controllers.SecurityController - Creating User
+2026-04-10 16:17:34 [JettyServerThreadPool-30] DEBUG app - Received POST request with body {
+  "email": "somethingNew5Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-10 16:17:35 [JettyServerThreadPool-30] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-04-10 16:18:26 [JettyServerThreadPool-35] INFO  app.controllers.UserController - Deleting user with id 5
+2026-04-10 16:18:37 [JettyServerThreadPool-39] INFO  app.controllers.UserController - Deleting user with id 4
+2026-04-10 16:19:06 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Creating User
+2026-04-10 16:19:06 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {
+  "email": "somethingNew5Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-10 16:19:06 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-04-10 16:19:21 [JettyServerThreadPool-36] INFO  app.controllers.UserController - Deleting user with id 6
+2026-04-10 16:20:21 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-04-10 16:20:21 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-04-10 16:20:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-10 16:20:21 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3d526ad9
+2026-04-10 16:20:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-10 16:20:21 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-04-10 16:20:23 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-04-10 16:20:23 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-04-10 16:20:23 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-04-10 16:20:23 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@7f49df25{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5b29d699{STARTED}}
+2026-04-10 16:20:23 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@7f49df25{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5b29d699{STARTED}}
+2026-04-10 16:20:23 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@4f3174c5{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-04-10 16:20:23 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@140cfc5f{STARTING}[12.1.6,sto=0] @18ms
+2026-04-10 16:20:23 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-04-10 16:20:23 [main] INFO  io.javalin.Javalin - Javalin started in 67ms \o/
+2026-04-10 16:20:23 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-04-10 16:20:23 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-04-10 16:20:28 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Creating User
+2026-04-10 16:20:28 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {
+  "email": "somethingNew5Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-10 16:20:28 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-04-10 16:20:28 [JettyServerThreadPool-31] INFO  app.controllers.SecurityController - Creating User
+2026-04-10 16:20:28 [JettyServerThreadPool-31] DEBUG app - Received POST request with body {
+  "email": "somethingNew5Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-10 16:20:28 [JettyServerThreadPool-31] WARN  io.javalin.Javalin - Uncaught exception
+org.hibernate.query.QueryTypeMismatchException: Result type is 'Long' but the query returned a 'User'
+	at org.hibernate.sql.results.internal.RowTransformerCheckingImpl.transformRow(RowTransformerCheckingImpl.java:36)
+	at org.hibernate.sql.results.internal.StandardRowReader.getResult(StandardRowReader.java:159)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:138)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.read(ListResultsConsumer.java:243)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.readRows(ListResultsConsumer.java:233)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:164)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.Query.getResultList(Query.java:121)
+	at app.daos.SecurityDAO.createUser(SecurityDAO.java:47)
+	at app.controllers.SecurityController.register(SecurityController.java:59)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:196)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-04-10 16:31:22 [JettyServerThreadPool-33] INFO  app.controllers.ProductController - Creating Product
+2026-04-10 16:31:22 [JettyServerThreadPool-33] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 4
+}
+2026-04-10 16:31:22 [JettyServerThreadPool-33] INFO  app.controllers.ProductController - Product Created Successfully
+2026-04-10 16:33:11 [JettyServerThreadPool-30] INFO  app.controllers.ProductController - Deleting product with id 4
+2026-04-10 16:33:24 [JettyServerThreadPool-32] INFO  app.controllers.UserController - Deleting user with id 4
+2026-04-13 11:39:37 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-04-13 11:39:37 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-04-13 11:39:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-13 11:39:38 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7e8e8651
+2026-04-13 11:39:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-13 11:39:38 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-04-13 11:39:39 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-04-13 11:39:39 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-04-13 11:39:39 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-04-13 11:39:39 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@2087c939{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6c3a7b84{STARTED}}
+2026-04-13 11:39:39 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@2087c939{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6c3a7b84{STARTED}}
+2026-04-13 11:39:39 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@4acdf6e7{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-04-13 11:39:39 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@2de82bf8{STARTING}[12.1.6,sto=0] @19ms
+2026-04-13 11:39:39 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-04-13 11:39:39 [main] INFO  io.javalin.Javalin - Javalin started in 79ms \o/
+2026-04-13 11:39:39 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-04-13 11:39:39 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-04-13 11:39:46 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Creating User
+2026-04-13 11:39:46 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {
+  "email": "somethingNew5Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-13 11:39:46 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-04-13 11:39:48 [JettyServerThreadPool-31] INFO  app.controllers.SecurityController - Creating User
+2026-04-13 11:39:48 [JettyServerThreadPool-31] DEBUG app - Received POST request with body {
+  "email": "somethingNew5Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-13 11:39:48 [JettyServerThreadPool-31] WARN  io.javalin.Javalin - Uncaught exception
+org.hibernate.query.QueryTypeMismatchException: Result type is 'Long' but the query returned a 'User'
+	at org.hibernate.sql.results.internal.RowTransformerCheckingImpl.transformRow(RowTransformerCheckingImpl.java:36)
+	at org.hibernate.sql.results.internal.StandardRowReader.getResult(StandardRowReader.java:159)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:138)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.read(ListResultsConsumer.java:243)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.readRows(ListResultsConsumer.java:233)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:164)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.Query.getResultList(Query.java:121)
+	at app.daos.SecurityDAO.createUser(SecurityDAO.java:47)
+	at app.controllers.SecurityController.register(SecurityController.java:59)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:196)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-04-13 11:39:55 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Creating User
+2026-04-13 11:39:55 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {
+  "email": "somethingNew7Test@gmail.com",
+  "password": "12345678"
+}
+2026-04-13 11:39:55 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-04-13 11:41:16 [JettyServerThreadPool-34] INFO  app.controllers.ProductController - Creating Product
+2026-04-13 11:41:16 [JettyServerThreadPool-34] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 5
+}
+2026-04-13 11:41:16 [JettyServerThreadPool-34] INFO  app.controllers.ProductController - Product Created Successfully
+2026-04-13 11:41:31 [JettyServerThreadPool-36] DEBUG app - Updating product with id 4
+2026-04-13 11:41:31 [JettyServerThreadPool-36] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23505
+2026-04-13 11:41:31 [JettyServerThreadPool-36] WARN  org.hibernate.orm.jdbc.error - ERROR: duplicate key value violates unique constraint "products_warranty_id_key"
+  Detail: Key (warranty_id)=(1) already exists.
+2026-04-13 11:41:31 [JettyServerThreadPool-36] WARN  io.javalin.Javalin - Uncaught exception
+org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "products_warranty_id_key"
+  Detail: Key (warranty_id)=(1) already exists.] [update products set owner=?,product_name=?,warranty_id=? where id=?]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:73)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:184)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:145)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:53)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:66)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.doStaticUpdate(UpdateCoordinatorStandard.java:776)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.performUpdate(UpdateCoordinatorStandard.java:313)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.update(UpdateCoordinatorStandard.java:231)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:161)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:634)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:505)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:381)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireFlush(SessionImpl.java:1489)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:481)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2116)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2038)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:410)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:166)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commitNoRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:248)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:242)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:89)
+	at app.daos.ProductDAO.update(ProductDAO.java:50)
+	at app.services.entityServices.ProductService.update(ProductService.java:44)
+	at app.controllers.ProductController.update(ProductController.java:40)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "products_warranty_id_key"
+  Detail: Key (warranty_id)=(1) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:181)
+	... 59 common frames omitted
+2026-04-13 11:41:41 [JettyServerThreadPool-32] DEBUG app - Fetching product with id 4
+2026-04-13 11:42:27 [JettyServerThreadPool-35] INFO  app.controllers.ProductController - Creating Warranty
+2026-04-13 11:42:27 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {
+    "productId" : 4,
+    "warrantyMonths" : 60,
+    "startDate" : "2026-03-09"
+}
+2026-04-13 11:42:27 [JettyServerThreadPool-35] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 17:40:17 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-05-10 17:40:17 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-05-10 17:40:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-10 19:57:08 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-05-10 19:57:08 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-05-10 19:57:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-10 19:57:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@79f227a9
+2026-05-10 19:57:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-10 19:57:08 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-05-10 19:57:10 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-05-10 19:57:10 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-05-10 19:57:10 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-05-10 19:57:10 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@7b364f47{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5c8d631{STARTED}}
+2026-05-10 19:57:10 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@7b364f47{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5c8d631{STARTED}}
+2026-05-10 19:57:10 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@b53ce18{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-05-10 19:57:10 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@2a666c8e{STARTING}[12.1.6,sto=0] @20ms
+2026-05-10 19:57:10 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-05-10 19:57:10 [main] INFO  io.javalin.Javalin - Javalin started in 75ms \o/
+2026-05-10 19:57:10 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-05-10 19:57:10 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-05-10 20:31:21 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-05-10 20:31:21 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-05-10 20:31:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-10 20:31:21 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7e8e8651
+2026-05-10 20:31:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-10 20:31:21 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-05-10 20:31:23 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-05-10 20:31:23 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-05-10 20:31:23 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-05-10 20:31:23 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@6bcfb561{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@7254a68a{STARTED}}
+2026-05-10 20:31:23 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@6bcfb561{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@7254a68a{STARTED}}
+2026-05-10 20:31:23 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@1ee52741{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-05-10 20:31:23 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@2f5a092e{STARTING}[12.1.6,sto=0] @19ms
+2026-05-10 20:31:23 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-05-10 20:31:23 [main] INFO  io.javalin.Javalin - Javalin started in 75ms \o/
+2026-05-10 20:31:23 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-05-10 20:31:23 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-05-10 21:35:50 [JettyServerThreadPool-33] INFO  app.controllers.SecurityController - Creating User
+2026-05-10 21:35:50 [JettyServerThreadPool-33] DEBUG app - Received POST request with body {"email":"Shay2@gmail.com","password":"Sayyes4312"}
+2026-05-10 21:35:50 [JettyServerThreadPool-33] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-05-10 21:37:20 [JettyServerThreadPool-35] INFO  app.controllers.ProductController - Deleting product with id 1
+2026-05-10 21:39:26 [JettyServerThreadPool-35] INFO  app.controllers.ProductController - Deleting product with id 2
+2026-05-10 21:39:37 [JettyServerThreadPool-35] INFO  app.controllers.ProductController - Deleting product with id 3
+2026-05-10 21:40:12 [JettyServerThreadPool-40] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 21:40:12 [JettyServerThreadPool-40] DEBUG app - Received POST request with body {"name":"Iphone 18","purchased":"2026-05-10","expires":"2026-07-31","retailer":"Apple","orderNumber":"132023023","price":"900","notes":""}
+2026-05-10 21:40:12 [JettyServerThreadPool-40] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 21:45:26 [JettyServerThreadPool-65] INFO  app.controllers.SecurityController - Creating User
+2026-05-10 21:45:26 [JettyServerThreadPool-65] DEBUG app - Received POST request with body {"email":"Shay3@gmail.com","password":"Sayyes4312"}
+2026-05-10 21:45:26 [JettyServerThreadPool-65] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-05-10 21:45:46 [JettyServerThreadPool-35] INFO  app.controllers.ProductController - Deleting product with id 4
+2026-05-10 22:07:13 [JettyServerThreadPool-86] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:07:13 [JettyServerThreadPool-86] DEBUG app - Received POST request with body {"productName":"Iphone 18","userId":5}
+2026-05-10 22:07:13 [JettyServerThreadPool-86] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 22:07:46 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:07:46 [JettyServerThreadPool-66] DEBUG app - Received POST request with body {"productName":"Apple Iphone 18","userId":5}
+2026-05-10 22:07:46 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 22:28:51 [JettyServerThreadPool-82] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:28:51 [JettyServerThreadPool-82] DEBUG app - Received POST request with body {"productName":"Iphone 18","userId":5}
+2026-05-10 22:28:51 [JettyServerThreadPool-82] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 22:28:51 [JettyServerThreadPool-82] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 22:28:51 [JettyServerThreadPool-82] DEBUG app - Received POST request with body {"productId":7,"warrantyMonths":120,"startDate":"2026-05-10"}
+2026-05-10 22:28:51 [JettyServerThreadPool-82] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 22:29:36 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:29:36 [JettyServerThreadPool-66] DEBUG app - Received POST request with body {"productName":"Iphone 18","userId":5}
+2026-05-10 22:29:36 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 22:29:36 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 22:29:36 [JettyServerThreadPool-66] DEBUG app - Received POST request with body {"productId":8,"warrantyMonths":24,"startDate":"2026-05-10"}
+2026-05-10 22:29:36 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 22:30:07 [JettyServerThreadPool-71] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:30:07 [JettyServerThreadPool-71] DEBUG app - Received POST request with body {"productName":"Macbook","userId":5}
+2026-05-10 22:30:07 [JettyServerThreadPool-71] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 22:30:08 [JettyServerThreadPool-71] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 22:30:08 [JettyServerThreadPool-71] DEBUG app - Received POST request with body {"productId":9,"warrantyMonths":24,"startDate":"2026-05-10"}
+2026-05-10 22:30:08 [JettyServerThreadPool-71] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 22:36:52 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:36:52 [JettyServerThreadPool-66] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 5
+}
+2026-05-10 22:36:52 [JettyServerThreadPool-66] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 22:47:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-05-10 22:47:47 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-05-10 22:47:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-10 22:47:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@63a5e46c
+2026-05-10 22:47:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-10 22:47:47 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-05-10 22:47:49 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-05-10 22:47:49 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-05-10 22:47:49 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-05-10 22:47:49 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@7e7987b8{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6bcfb561{STARTED}}
+2026-05-10 22:47:49 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@7e7987b8{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6bcfb561{STARTED}}
+2026-05-10 22:47:49 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@6520625f{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-05-10 22:47:49 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@1ee52741{STARTING}[12.1.6,sto=0] @19ms
+2026-05-10 22:47:49 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-05-10 22:47:49 [main] INFO  io.javalin.Javalin - Javalin started in 72ms \o/
+2026-05-10 22:47:49 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-05-10 22:47:49 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-05-10 22:47:59 [JettyServerThreadPool-30] INFO  app.controllers.ProductController - Deleting product with id 8
+2026-05-10 22:47:59 [JettyServerThreadPool-30] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 8
+	at app.daos.ProductDAO.getByID(ProductDAO.java:37)
+	at app.services.entityServices.ProductService.delete(ProductService.java:49)
+	at app.controllers.ProductController.delete(ProductController.java:46)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:196)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:47:59 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 6
+2026-05-10 22:47:59 [JettyServerThreadPool-36] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 6
+	at app.daos.ProductDAO.getByID(ProductDAO.java:37)
+	at app.services.entityServices.ProductService.delete(ProductService.java:49)
+	at app.controllers.ProductController.delete(ProductController.java:46)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:48:00 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 7
+2026-05-10 22:48:00 [JettyServerThreadPool-36] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 7
+	at app.daos.ProductDAO.getByID(ProductDAO.java:37)
+	at app.services.entityServices.ProductService.delete(ProductService.java:49)
+	at app.controllers.ProductController.delete(ProductController.java:46)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:48:00 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 5
+2026-05-10 22:48:00 [JettyServerThreadPool-36] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 5
+	at app.daos.ProductDAO.getByID(ProductDAO.java:37)
+	at app.services.entityServices.ProductService.delete(ProductService.java:49)
+	at app.controllers.ProductController.delete(ProductController.java:46)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:48:00 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 10
+2026-05-10 22:48:00 [JettyServerThreadPool-36] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 10
+	at app.daos.ProductDAO.getByID(ProductDAO.java:37)
+	at app.services.entityServices.ProductService.delete(ProductService.java:49)
+	at app.controllers.ProductController.delete(ProductController.java:46)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:48:01 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 9
+2026-05-10 22:48:01 [JettyServerThreadPool-36] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 9
+	at app.daos.ProductDAO.getByID(ProductDAO.java:37)
+	at app.services.entityServices.ProductService.delete(ProductService.java:49)
+	at app.controllers.ProductController.delete(ProductController.java:46)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:48:24 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:48:24 [JettyServerThreadPool-36] DEBUG app - Received POST request with body {"productName":"Macbook pro","userId":5}
+2026-05-10 22:48:24 [JettyServerThreadPool-36] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 5
+	at app.daos.UserDAO.getByID(UserDAO.java:46)
+	at app.services.dtoConverter.ProductDTOConverter.fromDTO(ProductDTOConverter.java:30)
+	at app.services.entityServices.ProductService.create(ProductService.java:25)
+	at app.controllers.ProductController.create(ProductController.java:23)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:48:41 [JettyServerThreadPool-31] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:48:41 [JettyServerThreadPool-31] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 5
+}
+2026-05-10 22:48:41 [JettyServerThreadPool-31] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 5
+	at app.daos.UserDAO.getByID(UserDAO.java:46)
+	at app.services.dtoConverter.ProductDTOConverter.fromDTO(ProductDTOConverter.java:30)
+	at app.services.entityServices.ProductService.create(ProductService.java:25)
+	at app.controllers.ProductController.create(ProductController.java:23)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:196)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:48:46 [JettyServerThreadPool-30] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:48:46 [JettyServerThreadPool-30] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 5
+}
+2026-05-10 22:48:46 [JettyServerThreadPool-30] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 5
+	at app.daos.UserDAO.getByID(UserDAO.java:46)
+	at app.services.dtoConverter.ProductDTOConverter.fromDTO(ProductDTOConverter.java:30)
+	at app.services.entityServices.ProductService.create(ProductService.java:25)
+	at app.controllers.ProductController.create(ProductController.java:23)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:49:29 [JettyServerThreadPool-42] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:49:29 [JettyServerThreadPool-42] DEBUG app - Received POST request with body {"productName":"Apple","userId":5}
+2026-05-10 22:49:29 [JettyServerThreadPool-42] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 5
+	at app.daos.UserDAO.getByID(UserDAO.java:46)
+	at app.services.dtoConverter.ProductDTOConverter.fromDTO(ProductDTOConverter.java:30)
+	at app.services.entityServices.ProductService.create(ProductService.java:25)
+	at app.controllers.ProductController.create(ProductController.java:23)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:50:00 [JettyServerThreadPool-31] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:50:00 [JettyServerThreadPool-31] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 5
+}
+2026-05-10 22:50:00 [JettyServerThreadPool-31] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 5
+	at app.daos.UserDAO.getByID(UserDAO.java:46)
+	at app.services.dtoConverter.ProductDTOConverter.fromDTO(ProductDTOConverter.java:30)
+	at app.services.entityServices.ProductService.create(ProductService.java:25)
+	at app.controllers.ProductController.create(ProductController.java:23)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:52:10 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Creating User
+2026-05-10 22:52:10 [JettyServerThreadPool-35] DEBUG app - Received POST request with body {"email":"Shay3@gmail.com","password":"Sayyes4312"}
+2026-05-10 22:52:10 [JettyServerThreadPool-35] INFO  app.controllers.SecurityController - Product Created Successfully
+2026-05-10 22:52:14 [JettyServerThreadPool-35] INFO  app.controllers.ProductController - Deleting product with id 1
+2026-05-10 22:52:14 [JettyServerThreadPool-39] INFO  app.controllers.ProductController - Deleting product with id 2
+2026-05-10 22:52:14 [JettyServerThreadPool-33] INFO  app.controllers.ProductController - Deleting product with id 3
+2026-05-10 22:52:31 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:52:31 [JettyServerThreadPool-36] DEBUG app - Received POST request with body {"productName":"Apple","userId":4}
+2026-05-10 22:52:31 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 22:52:31 [JettyServerThreadPool-31] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 22:52:31 [JettyServerThreadPool-31] DEBUG app - Received POST request with body {"productId":4,"warrantyMonths":120,"startDate":"2026-05-10"}
+2026-05-10 22:52:31 [JettyServerThreadPool-31] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 22:52:56 [JettyServerThreadPool-29] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 22:52:56 [JettyServerThreadPool-29] DEBUG app - Received POST request with body {
+    "productName" : "Test Prodcut Iphone",
+    "userId" : 5
+}
+2026-05-10 22:52:56 [JettyServerThreadPool-29] WARN  io.javalin.Javalin - Uncaught exception
+jakarta.persistence.EntityNotFoundException: No entity found with id: 5
+	at app.daos.UserDAO.getByID(UserDAO.java:46)
+	at app.services.dtoConverter.ProductDTOConverter.fromDTO(ProductDTOConverter.java:30)
+	at app.services.entityServices.ProductService.create(ProductService.java:25)
+	at app.controllers.ProductController.create(ProductController.java:23)
+	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:19)
+	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$0$0$0(DefaultTasks.kt:52)
+	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:108)
+	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:72)
+	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:58)
+	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:38)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:50)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:752)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1620)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1554)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:868)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:449)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:469)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:719)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1224)
+	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:794)
+	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
+	at org.eclipse.jetty.server.Server.handle(Server.java:197)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:787)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:410)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1805)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:317)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-05-10 22:53:14 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-05-10 22:53:14 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-05-10 22:53:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-10 22:53:14 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f6a7463
+2026-05-10 22:53:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-10 22:53:14 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-05-10 22:53:15 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-05-10 22:53:15 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-05-10 22:53:15 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-05-10 22:53:15 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@eee26bd{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@3d1c8f35{STARTED}}
+2026-05-10 22:53:15 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@eee26bd{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@3d1c8f35{STARTED}}
+2026-05-10 22:53:15 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@7c751692{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-05-10 22:53:15 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@2569afda{STARTING}[12.1.6,sto=0] @17ms
+2026-05-10 22:53:15 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-05-10 22:53:15 [main] INFO  io.javalin.Javalin - Javalin started in 100ms \o/
+2026-05-10 22:53:15 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-05-10 22:53:15 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-05-10 22:53:32 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-05-10 22:53:32 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-05-10 22:53:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-10 22:53:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a38ba58
+2026-05-10 22:53:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-10 22:53:32 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-05-10 22:53:34 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-05-10 22:53:34 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-05-10 22:53:34 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-05-10 22:53:34 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@39451d92{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@46610fc9{STARTED}}
+2026-05-10 22:53:34 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@39451d92{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@46610fc9{STARTED}}
+2026-05-10 22:53:34 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@70efdd18{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-05-10 22:53:34 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@247a8411{STARTING}[12.1.6,sto=0] @18ms
+2026-05-10 22:53:34 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-05-10 22:53:34 [main] INFO  io.javalin.Javalin - Javalin started in 73ms \o/
+2026-05-10 22:53:34 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-05-10 22:53:34 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-05-10 23:10:27 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.3.Final
+2026-05-10 23:10:27 [main] INFO  org.hibernate.orm.beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate class loader
+2026-05-10 23:10:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-10 23:10:27 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b739528
+2026-05-10 23:10:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-10 23:10:27 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/warranty_project]
+	Database driver: org.postgresql.Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.2
+	Default catalog/schema: warranty_project/public
+	Autocommit mode: true
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: HikariCPConnectionProvider
+	Minimum pool size: 2
+	Maximum pool size: 10
+2026-05-10 23:10:29 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2026-05-10 23:10:29 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.6; built: 2026-01-27T18:53:19.182Z; git: 88ca559572b1c8858b3c5684bb0293fa64e5e90f; jvm 17.0.18+9-LTS
+2026-05-10 23:10:29 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2026-05-10 23:10:29 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@1dbf727a{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6ffa8126{STARTED}}
+2026-05-10 23:10:29 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@1dbf727a{/api,/api,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6ffa8126{STARTED}}
+2026-05-10 23:10:29 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@31a80c88{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+2026-05-10 23:10:29 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@7602c65d{STARTING}[12.1.6,sto=0] @17ms
+2026-05-10 23:10:29 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+2026-05-10 23:10:29 [main] INFO  io.javalin.Javalin - Javalin started in 63ms \o/
+2026-05-10 23:10:29 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/api
+2026-05-10 23:10:29 [main] INFO  io.javalin.Javalin - You are running Javalin 7.0.1 (released February 28, 2026).
+2026-05-10 23:13:37 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 23:13:37 [JettyServerThreadPool-36] DEBUG app - Received POST request with body {"productName":"Apple","userId":1}
+2026-05-10 23:13:37 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 23:13:37 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 23:13:37 [JettyServerThreadPool-36] DEBUG app - Received POST request with body {"productId":4,"warrantyMonths":120,"startDate":"2026-05-10"}
+2026-05-10 23:13:37 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 23:16:54 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 3
+2026-05-10 23:16:55 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 2
+2026-05-10 23:16:56 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 1
+2026-05-10 23:17:52 [JettyServerThreadPool-40] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 23:17:52 [JettyServerThreadPool-40] DEBUG app - Received POST request with body {"productName":"Apple1","userId":1}
+2026-05-10 23:17:52 [JettyServerThreadPool-40] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 23:17:52 [JettyServerThreadPool-40] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 23:17:52 [JettyServerThreadPool-40] DEBUG app - Received POST request with body {"productId":5,"warrantyMonths":0,"startDate":"2026-05-10"}
+2026-05-10 23:17:52 [JettyServerThreadPool-40] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 23:22:44 [JettyServerThreadPool-43] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 23:22:44 [JettyServerThreadPool-43] DEBUG app - Received POST request with body {"productName":"apple2","userId":1}
+2026-05-10 23:22:44 [JettyServerThreadPool-43] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 23:22:44 [JettyServerThreadPool-48] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 23:22:44 [JettyServerThreadPool-48] DEBUG app - Received POST request with body {"productId":6,"warrantyMonths":1,"startDate":"2026-05-10"}
+2026-05-10 23:22:44 [JettyServerThreadPool-48] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 23:27:20 [JettyServerThreadPool-29] INFO  app.controllers.ProductController - Creating Product
+2026-05-10 23:27:20 [JettyServerThreadPool-29] DEBUG app - Received POST request with body {"productName":"Apple12","userId":1}
+2026-05-10 23:27:20 [JettyServerThreadPool-29] INFO  app.controllers.ProductController - Product Created Successfully
+2026-05-10 23:27:20 [JettyServerThreadPool-53] INFO  app.controllers.ProductController - Creating Warranty
+2026-05-10 23:27:20 [JettyServerThreadPool-53] DEBUG app - Received POST request with body {"productId":7,"warrantyMonths":2,"startDate":"2026-05-10"}
+2026-05-10 23:27:20 [JettyServerThreadPool-53] INFO  app.controllers.ProductController - Warranty Created Successfully
+2026-05-10 23:27:25 [JettyServerThreadPool-36] INFO  app.controllers.ProductController - Deleting product with id 5
+2026-05-10 23:29:44 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6b739528 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-10 23:30:10 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1ba66dfe (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-10 23:30:42 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3463800c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-10 23:31:15 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2a08a4fc (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-10 23:31:43 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (577d0c48-781f-4bea-b0a8-be0bbdaab81b)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-05-10 23:32:48 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (3e500b0f-750a-47cf-9038-6cf07c61a140)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-05-10 23:33:53 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (60dbfb37-e5ca-42fb-aff7-dbdd9bee1e08)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-05-10 23:34:58 [HikariPool-1:connection-adder] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (efee92ea-5d47-4e9a-9833-d643c961b7ea)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted

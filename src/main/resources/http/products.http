@@ -4,7 +4,7 @@ Accept: application/json
 Authorization: Bearer {{token}}
 
 ### Get Product with ID
-GET {{url}}/product/1
+GET {{url}}/product/4
 Accept: application/json
 Authorization: Bearer {{token}}
 
@@ -15,11 +15,11 @@ Authorization: Bearer {{token}}
 
 {
     "productName" : "Test Prodcut Iphone",
-    "userId" : 1
+    "userId" : 5
 }
 
 ### Update Product on ID
-PUT {{url}}/product/1
+PUT {{url}}/product/4
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -30,5 +30,5 @@ Authorization: Bearer {{token}}
 }
 
 ### Delete Product on ID
-DELETE {{url}}/product/1
+DELETE {{url}}/product/4
 Authorization: Bearer {{token}}

@@ -1,7 +1,9 @@
 package app.services.entityServices;
 
+import app.daos.ProductDAO;
 import app.daos.WarrantyDAO;
 import app.dto.WarrantyDTO;
+import app.entity.Product;
 import app.entity.Warranty;
 import app.services.dtoConverter.WarrantyDTOConverter;
 import jakarta.persistence.EntityManagerFactory;
@@ -13,16 +15,25 @@ public class WarrantyService {
     private final EntityManagerFactory emf;
     private final WarrantyDTOConverter converter;
     private final WarrantyDAO warrantyDAO;
+    private final ProductDAO productDAO;
 
     public WarrantyService(EntityManagerFactory emf) {
         this.emf = emf;
         this.warrantyDAO = new WarrantyDAO(emf);
+        this.productDAO = new ProductDAO(emf);
         this.converter = new WarrantyDTOConverter(emf);
     }
 
     public WarrantyDTO create(WarrantyDTO warrantyDTO) {
         Warranty warranty = converter.fromDTO(warrantyDTO);
         Warranty created = warrantyDAO.create(warranty);
+
+        if(created.getProduct() != null) {
+            Product product = created.getProduct();
+            product.setWarranty(created);
+            productDAO.update(product);
+        }
+
         return converter.toDTO(created);
     }
 

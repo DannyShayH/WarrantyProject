@@ -21,11 +21,13 @@ public class Populator {
     private final IDAO<Receipt> receiptDAO;
     private final IDAO<Warranty> warrantyDAO;
     private final IDAO<User> userDAO;
+    private final SecurityDAO securityDAO;
 
     public Populator(EntityManagerFactory emf) {
         this.emf = emf;
         this.passwordService = new PasswordService();
         this.productDAO = new ProductDAO(emf);
+        this.securityDAO = new SecurityDAO(emf);
         this.productRegistrationDAO = new ProductRegistrationDAO(emf);
         this.receiptDAO = new ReceiptDAO(emf);
         this.warrantyDAO = new WarrantyDAO(emf);
@@ -33,31 +35,11 @@ public class Populator {
     }
 
     public Map<String, IEntity> populate() {
-        LocalDateTime startDateTime = LocalDateTime.now();
         LocalDate start = LocalDate.now();
 
-        User user1 = User
-                .builder()
-                .email("Shay@gmail.com")
-                .password(passwordService.hash("12345678"))
-                .createdAt(startDateTime)
-                .build();
-        User user2 = User
-                .builder()
-                .email("Honda@gmail.com")
-                .password(passwordService.hash("12345678"))
-                .createdAt(startDateTime)
-                .build();
-        User user3 = User
-                .builder()
-                .email("Clad@gmail.com")
-                .password(passwordService.hash("12345678"))
-                .createdAt(startDateTime)
-                .build();
-
-        userDAO.create(user1);
-        userDAO.create(user2);
-        userDAO.create(user3);
+        User user1 = securityDAO.createUser("Shay@gmail.com", "1234");
+        User user2 = securityDAO.createUser("Honda@gmail.com", "1234");
+        User user3 = securityDAO.createUser("Clad@gmail.com", "1234");
 
 
         Product product1 = Product

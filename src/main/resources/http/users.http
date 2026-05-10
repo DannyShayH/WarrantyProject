@@ -13,7 +13,7 @@ POST {{url}}/security/register
 Content-Type: application/json
 
 {
-  "email": "somethingNew3Test@gmail.com",
+  "email": "somethingNew7Test@gmail.com",
   "password": "12345678"
 }
 
@@ -22,7 +22,7 @@ POST {{url}}/security/login
 Content-Type: application/json
 
 {
-  "email": "somethingNew3Test@gmail.com",
+  "email": "somethingNew7Test@gmail.com",
   "password": "12345678"
 }
 
@@ -45,5 +45,5 @@ Authorization: Bearer {{token}}
 }
 
 ### Delete User on ID
-DELETE {{url}}/user/2
+DELETE {{url}}/user/1
 Authorization: Bearer {{token}}

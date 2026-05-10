@@ -24,6 +24,11 @@ public class ApplicationConfig {
 
     public void configuration(JavalinConfig config){
         config.bundledPlugins.enableRouteOverview("/routes");
+        config.bundledPlugins.enableCors(cors -> {
+            cors.addRule(rule -> {
+                rule.allowHost("http://localhost:5173");
+            });
+        });
         config.router.contextPath = "/api";
         config.jsonMapper(new JavalinJackson().updateMapper(objectMapper -> {
             objectMapper.registerModule(new JavaTimeModule());
