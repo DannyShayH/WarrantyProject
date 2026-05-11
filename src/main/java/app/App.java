@@ -14,13 +14,13 @@ public class App {
      static void initiate(){
         final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
         XmlService xmlService = new XmlService(emf);
-        Populator populater = new Populator(emf);
+//        Populator populater = new Populator(emf);
         Routes routes = new Routes();
         ApplicationConfig config = new ApplicationConfig(routes);
 
         long start = System.currentTimeMillis();
 
-        populater.populateAndCreateEntities();
+//        populater.populateAndCreateEntities();
 
         xmlService.extractAndPersistXML();
 
