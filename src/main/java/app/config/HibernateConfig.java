@@ -25,7 +25,7 @@ public final class HibernateConfig {
     private static Properties buildProps() {
         Properties props = HibernateBaseProperties.createBase();
 
-        props.put("hibernate.hbm2ddl.auto", "create");
+        props.put("hibernate.hbm2ddl.auto", "update");
 
         if (System.getenv("DEPLOYED") != null) {
             setDeployedProperties(props);
