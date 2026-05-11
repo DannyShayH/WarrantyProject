@@ -41,7 +41,7 @@ public class SecurityDAO implements ISecurityDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            boolean exists = !em.createQuery("SELECT u FROM User u WHERE u.email = :email", Long.class)
+            boolean exists = !em.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
                     .setParameter("email", email)
                     .setMaxResults(1)
                     .getResultList()
