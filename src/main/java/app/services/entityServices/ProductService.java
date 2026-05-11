@@ -34,6 +34,13 @@ public class ProductService {
             .collect(Collectors.toSet());
     }
 
+    public Set<ProductDTO> getAllByUserId(Long userId) {
+        return productDAO.getAllByUserId(userId)
+                .stream()
+                .map(converter::toDTO)
+                .collect(Collectors.toSet());
+    }
+
     public ProductDTO getByID(Long id) {
         Product product = productDAO.getByID(id);
         return converter.toDTO(product);

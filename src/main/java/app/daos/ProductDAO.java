@@ -86,5 +86,14 @@ public class ProductDAO implements IDAO<Product> {
             return new HashSet(em.createQuery("SELECT p FROM Product p").getResultList());
         }
     }
+
+    public Set<Product> getAllByUserId(Long userId){
+        try(EntityManager em = emf.createEntityManager()){
+            return new HashSet<>(em.createQuery(
+                    "SELECT p FROM Product p WHERE p.owner.id = :userId", Product.class)
+                    .setParameter("userId", userId)
+                    .getResultList());
+        }
+    }
 }
 

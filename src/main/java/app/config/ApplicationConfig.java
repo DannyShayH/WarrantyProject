@@ -26,7 +26,7 @@ public class ApplicationConfig {
         config.bundledPlugins.enableRouteOverview("/routes");
         config.bundledPlugins.enableCors(cors -> {
             cors.addRule(rule -> {
-                rule.allowHost("http://localhost:5173");
+                rule.anyHost();
             });
         });
         config.router.contextPath = "/api";

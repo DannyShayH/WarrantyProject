@@ -18,6 +18,11 @@ Authorization: Bearer {{token}}
     "userId" : 5
 }
 
+### Get products by user ID
+GET {{url}}/product/user/1
+Accept: application/json
+Authorization: Bearer {{token}}
+
 ### Update Product on ID
 PUT {{url}}/product/4
 Content-Type: application/json

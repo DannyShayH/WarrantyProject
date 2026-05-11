@@ -39,6 +39,7 @@ public class Routes {
             path("product", () -> {
                 post("/", productController::create, RouteRole.USER);
                 get("/all", productController::getAll, RouteRole.USER);
+                get("/user/{id}", productController::getAllByUser, RouteRole.USER);
                 get("/{id}", productController::getById, RouteRole.USER);
                 put("/{id}", productController::update, RouteRole.USER);
                 delete("/{id}", productController::delete, RouteRole.USER);

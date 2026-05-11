@@ -47,6 +47,11 @@ public class ProductController {
         ctx.status(204);
     }
 
+    public void getAllByUser(Context ctx){
+        long userId = Long.parseLong(ctx.pathParam("id"));
+        ctx.json(productService.getAllByUserId(userId));
+    }
+
     public void getAll(Context ctx){
         ctx.json(productService.get());
     }
