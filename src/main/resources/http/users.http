@@ -13,7 +13,7 @@ POST {{url}}/security/register
 Content-Type: application/json
 
 {
-  "email": "somethingNew7Test@gmail.com",
+  "email": "somethingnew7@gmail.com",
   "password": "12345678"
 }
 
@@ -22,7 +22,7 @@ POST {{url}}/security/login
 Content-Type: application/json
 
 {
-  "email": "somethingNew7Test@gmail.com",
+  "email": "somethingnew7@gmail.com",
   "password": "12345678"
 }
 
