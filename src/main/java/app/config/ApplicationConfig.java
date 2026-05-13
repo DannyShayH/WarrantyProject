@@ -1,6 +1,5 @@
 package app.config;
 
-import app.controllers.SecurityController;
 import app.routes.Routes;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
@@ -10,7 +9,10 @@ import io.javalin.config.JavalinConfig;
 import io.javalin.http.HttpStatus;
 import io.javalin.json.JavalinJackson;
 import io.javalin.validation.ValidationException;
-import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.PersistenceException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -21,6 +23,8 @@ public class ApplicationConfig {
     public ApplicationConfig(Routes routes) {
         this.routes = routes;
     }
+
+    private static final Logger logger = LoggerFactory.getLogger(ApplicationConfig.class);
 
     public void configuration(JavalinConfig config){
         config.bundledPlugins.enableRouteOverview("/routes");
@@ -37,6 +41,9 @@ public class ApplicationConfig {
 
         config.routes.apiBuilder(routes.getRoutes());
         config.routes.exception(ValidationException.class, (e, ctx) -> {
+
+            logger.error("Unhandled validation occurred", e);
+
             ctx.status(HttpStatus.BAD_REQUEST);
             ctx.json(Map.of(
                     "message", "Path parameter must be a number",
@@ -44,7 +51,32 @@ public class ApplicationConfig {
             ));
         });
         config.routes.exception(MismatchedInputException.class, (e, ctx) -> {
-            ctx.status(HttpStatus.BAD_REQUEST).json("Invalid or Empty Request Body");
+
+            logger.error("Unhandled mismatchedInput occurred", e);
+
+            ctx.status(HttpStatus.BAD_REQUEST).json(Map.of("message", "invalid or empty request body",
+                    "status", 400, "path", ctx.path()));
+        });
+
+        config.routes.exception(IllegalAccessException.class, (e, ctx) -> {
+
+            logger.error("Unhandled illegalAccess occurred", e);
+
+            ctx.status(HttpStatus.BAD_REQUEST).json(Map.of("message", "Invalid token"));
+        });
+
+        config.routes.exception(EntityNotFoundException.class, (e, ctx) -> {
+
+            logger.error("Unhandled entityNotFound occurred", e);
+
+            ctx.status(HttpStatus.NOT_FOUND).json(Map.of("message", e.getMessage()));
+        });
+
+        config.routes.exception(PersistenceException.class, (e, ctx) -> {
+
+            logger.error("Unhandled persistence occurred", e);
+
+            ctx.status(HttpStatus.INTERNAL_SERVER_ERROR).json(Map.of("message", "Database error"));
         });
     }
 
